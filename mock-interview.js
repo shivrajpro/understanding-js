@@ -104,12 +104,39 @@ function MERGE_SORT(a, b) {
     while (second < b.length)
         c.push(b[second++]);
 
-    console.log('in MS c=', c);
+    // console.log('in MS c=', c);
 }
 MERGE_SORT(a, b);
 // my solution
 let c = a.concat(b);
 c.sort(function (a, b) { return a - b; }) // return b-a; console.log('a=',a,'b=',b);
-console.log('concat = ', c);
+// console.log('concat = ', c);
 
 // console.log(a+b); //1,2,5,7,92,5,7,12,100
+
+
+// given
+const obj2 = {
+    x:1,
+    getX(){
+        console.log('first');
+        const that = this;
+        const inner = function () {
+            console.log('from inner this.x=', this.x);
+            console.log('from inner that.x=', that.x);
+        }
+        inner();
+        // inner.call(this);
+        // inner.bind(this)();
+    },
+    // getX(){
+    //     console.log('second');
+    //     const inner =  () => {
+    //         console.log('from inner x=', this.x); //will log 1
+    //     }
+    //     inner();
+    // }
+}
+
+// whats the output?
+obj2.getX(); // will log undefined since x is property of obj2 and inner is a prop of getX
