@@ -1,4 +1,4 @@
-
+// "use strict";
 //DEBOUNCING
 // place order
 // call a function only once after 2 seconds of last click
@@ -66,22 +66,11 @@ let add = a => b => b ? add(a + b) : a;
 //     myLog(x*y);
 // }
 
-let multiply = function (x) {
-    return function (y) {
-        myLog(x*y);
-    }
-}
-let multiplyBy2 = multiply(2);
-// let multiplyBy2 = multiply.bind(this, 2);
-// let multiplyBy2 = multiply.bind(this, 2, 5);
-// multiplyBy2(4);
-
-
 //HOISTING
 // getName();
 // console.log(x);
 
-var x=7;
+// var x=7;
 
 function getName() {
     console.log('namaste js');
@@ -107,6 +96,9 @@ let printUserData = function (hometown, state) {
     myLog(this.firstname+" "+this.lastname+" from "+hometown+", "+state);
 }
 /*
+// This method invokes a method (function) by specifying the owner object.
+// allows an object to use the method (function) of another object.
+// accepts arguments
 printFullName.call(name1);
 printFullName.call(name2);
 
@@ -115,11 +107,15 @@ printFullName.call(name2);
 printUserData.call(name1, "Pune", "MH");
 printUserData.call(name2, "Bangalore", "KA");
 
+// call() method takes arguments separately whereas, apply() method takes arguments as an array
+
 printUserData.apply(name1, ["Pune", "MH"]);
 printUserData.apply(name2, ["Bangalore", "KA"]);
 
 
 //returns a copy of function
+// where the value of “this” skeyword will be bound to the owner object, 
+// which is provided as a parameter
 let logMyData = printUserData.bind(name1, "Pune", "MH");
 let logOthersData = printUserData.bind(name2, "Bangalore", "KA");
 // myLog(logMyData);
@@ -220,8 +216,27 @@ document.querySelector("#categories").addEventListener('click', (e)=>{
 })
 
 // behaviour pattern
+// var firstName = document.getElementById('firstName');
+var firstName = document.querySelector('input');
 document.querySelector("#myForm").addEventListener('keyup', (e)=>{
-    myLog('e',e);
+    // myLog('e',e);
+    console.log('val=',firstName.value);
     if(e.target.dataset.uppercase != undefined)
         e.target.value = e.target.value.toUpperCase();
+    console.log('attr val =',firstName.getAttribute('value')); // prints always the value from html
 })
+// console.log('outside',firstName.getAttribute('value'));
+// The “this” keyword refers to the object that the function is a property of.
+// The value of “this” keyword will always depend on the object that is invoking the function.
+// myLog('outside',this);
+function foo() {
+    myLog('in foo', this);
+}
+// foo();
+const person = {
+    firstname:"shivraj",
+    age:"24",
+    phone:"9921463549"
+}
+let {age, phone, firstname} = person; //order does not matter
+// console.log('>> age',age,' firstname',firstname,' phone', phone);
