@@ -208,10 +208,29 @@ let arr = [1,2,2,4,2,4];
 
 arr.sort((a,b)=>b-a);
 
-console.log(arr);
+// console.log(arr);
 for (let i = 0; i < arr.length - 1; i++) {
     if(arr[i]!==arr[i+1]){
-        console.log("count=",i+1);    
+        // console.log("count=",i+1);    
         break;
     }
 }
+
+// ==========================================================================================
+// find the output
+arr = [5, 120, 15, 21];
+for (let i = 0; i < arr.length; i++) {
+    setTimeout(() => {
+        // console.log(`Index:${i}, element:${arr[i]}`);
+    }, arr[i]);    
+}
+// my answer: [0,5], [2,15], [3, 21], [1, 120]
+// tip: in sorted order
+
+// ==========================================================================================
+// question: convert it to 24 hr format. (here 15:50PM)
+let time = "03:50PM";
+let hr = Number(time.substr(0,2)) + 12;
+let formattedTime = hr+time.substr(2);
+console.log("hr", hr);
+console.log("formattedTime",formattedTime);
