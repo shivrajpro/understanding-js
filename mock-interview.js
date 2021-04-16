@@ -188,3 +188,30 @@ const til = {
 
 let str = "i love javaScript";
 // console.log(str.split("").reverse().join(""));
+// ==========================================================================================
+
+// question: print name without using regular function
+const profile = {
+    username: 'techsith',
+    getName: ()=>{
+        console.log('name',this.username);
+    }
+}
+
+// answer : INVALID QUESTION
+// profile.getName();
+// console.log(profile.username);
+
+// ==========================================================================================
+// question: print the count of maximum number. (here 2 as 4 is repeated twice)
+let arr = [1,2,2,4,2,4];
+
+arr.sort((a,b)=>b-a);
+
+console.log(arr);
+for (let i = 0; i < arr.length - 1; i++) {
+    if(arr[i]!==arr[i+1]){
+        console.log("count=",i+1);    
+        break;
+    }
+}
