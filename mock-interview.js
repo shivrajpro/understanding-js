@@ -139,4 +139,52 @@ const obj2 = {
 }
 
 // whats the output?
-obj2.getX(); // will log undefined since x is property of obj2 and inner is a prop of getX
+// obj2.getX(); // will log undefined since x is property of obj2 and inner is a prop of getX
+
+let ary = [1, 2, 5, 7];
+
+let sum = ary.reduce((acc, el)=> acc+el,10);
+
+// console.log('sum=',sum);
+// ==================================================================================
+// question : write a function to return the sum
+// add(1,2);
+// add(1)(2);
+
+function add(n1, n2) {
+    if(n1 && n2){
+        return n1+n2;
+    }else{
+        return function (n3) {
+            return n1 + n3;
+        }
+    }
+}
+
+// console.log(add(1,2));
+// console.log(add(1)(2));
+
+// =======================================================================================
+
+// question: Given an unsorted array that contains 1-100. Find the missing number
+let arr1 = [1,7,3,6,4,2,9,10,8];
+
+sum = arr1.reduce((acc, el)=> acc+el);
+// console.log("missing number=", 55-sum);
+
+// ==========================================================================================
+
+// question: write a function which will allow me to pay the money with min. number of coins from til
+
+const til = {
+    penny:12,
+    nickel:10,
+    dime:2,
+    quarter:12,
+    dollar: 30
+};
+
+// input: 20.47
+
+let str = "i love javaScript";
+// console.log(str.split("").reverse().join(""));
