@@ -226,6 +226,8 @@ document.querySelector("#myForm").addEventListener('keyup', (e)=>{
     console.log('attr val =',firstName.getAttribute('value')); // prints always the value from html
 })
 // console.log('outside',firstName.getAttribute('value'));
+
+
 // The “this” keyword refers to the object that the function is a property of.
 // The value of “this” keyword will always depend on the object that is invoking the function.
 // myLog('outside',this);

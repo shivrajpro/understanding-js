@@ -117,8 +117,8 @@ c.sort(function (a, b) { return a - b; }) // return b-a; console.log('a=',a,'b='
 
 // given
 const obj2 = {
-    x:1,
-    getX(){
+    x: 1,
+    getX() {
         console.log('first');
         const that = this;
         const inner = function () {
@@ -143,7 +143,7 @@ const obj2 = {
 
 let ary = [1, 2, 5, 7];
 
-let sum = ary.reduce((acc, el)=> acc+el,10);
+let sum = ary.reduce((acc, el) => acc + el, 10);
 
 // console.log('sum=',sum);
 // ==================================================================================
@@ -152,9 +152,9 @@ let sum = ary.reduce((acc, el)=> acc+el,10);
 // add(1)(2);
 
 function add(n1, n2) {
-    if(n1 && n2){
-        return n1+n2;
-    }else{
+    if (n1 && n2) {
+        return n1 + n2;
+    } else {
         return function (n3) {
             return n1 + n3;
         }
@@ -167,9 +167,9 @@ function add(n1, n2) {
 // =======================================================================================
 
 // question: Given an unsorted array that contains 1-100. Find the missing number
-let arr1 = [1,7,3,6,4,2,9,10,8];
+let arr1 = [1, 7, 3, 6, 4, 2, 9, 10, 8];
 
-sum = arr1.reduce((acc, el)=> acc+el);
+sum = arr1.reduce((acc, el) => acc + el);
 // console.log("missing number=", 55-sum);
 
 // ==========================================================================================
@@ -177,10 +177,10 @@ sum = arr1.reduce((acc, el)=> acc+el);
 // question: write a function which will allow me to pay the money with min. number of coins from til
 
 const til = {
-    penny:12,
-    nickel:10,
-    dime:2,
-    quarter:12,
+    penny: 12,
+    nickel: 10,
+    dime: 2,
+    quarter: 12,
     dollar: 30
 };
 
@@ -193,8 +193,8 @@ let str = "i love javaScript";
 // question: print name without using regular function
 const profile = {
     username: 'techsith',
-    getName: ()=>{
-        console.log('name',this.username);
+    getName: () => {
+        console.log('name', this.username);
     }
 }
 
@@ -204,13 +204,13 @@ const profile = {
 
 // ==========================================================================================
 // question: print the count of maximum number. (here 2 as 4 is repeated twice)
-let arr = [1,2,2,4,2,4];
+let arr = [1, 2, 2, 4, 2, 4];
 
-arr.sort((a,b)=>b-a);
+arr.sort((a, b) => b - a);
 
 // console.log(arr);
 for (let i = 0; i < arr.length - 1; i++) {
-    if(arr[i]!==arr[i+1]){
+    if (arr[i] !== arr[i + 1]) {
         // console.log("count=",i+1);    
         break;
     }
@@ -222,15 +222,36 @@ arr = [5, 120, 15, 21];
 for (let i = 0; i < arr.length; i++) {
     setTimeout(() => {
         // console.log(`Index:${i}, element:${arr[i]}`);
-    }, arr[i]);    
+    }, arr[i]);
 }
 // my answer: [0,5], [2,15], [3, 21], [1, 120]
 // tip: in sorted order
 
 // ==========================================================================================
 // question: convert it to 24 hr format. (here 15:50PM)
-let time = "03:50PM";
-let hr = Number(time.substr(0,2)) + 12;
-let formattedTime = hr+time.substr(2);
-console.log("hr", hr);
-console.log("formattedTime",formattedTime);
+// substr params: (startIndex, number_of_chars)
+// substring params: (startIndex, endIndex)
+
+let time = "12:50PM";
+// console.log("substring", time.substring(2,5));
+// console.log("substr", time.substr(2,5));
+
+let hr = Number(time.substr(0, 2));
+if (hr === 12 && time.substr(time.length - 2) === "AM")
+    hr = "00";
+if (hr !== 12 && time.substr(time.length - 2) === "PM")
+    hr += 12;
+let formattedTime = hr + time.substring(2, 5);
+// console.log("formattedTime", formattedTime);
+
+// ==========================================================================================
+// question: converts numbers to different base types
+// general: number.toString(target_base), parseInt(source_num, source_base)
+// decimal to hex
+let decimal = 17;
+let hex = decimal.toString(16);
+console.log("hex=",hex);
+
+hex="4A";
+// hex to decimal
+console.log("decimal=",parseInt(hex,16));
