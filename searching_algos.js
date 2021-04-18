@@ -58,18 +58,18 @@ str = "lorel loled"; key = "lo"; matches = 0;
 
 for (let i = 0; i < str.length; i++) {
     for (let j = 0; j < key.length; j++) {
-        console.log(key[j], str[i + j]);
+        // console.log(key[j], str[i + j]);
         if (key[j] !== str[i + j]) {
-            console.log("BREAK!");
+            // console.log("BREAK!");
             break;
         }
 
         if (j == key.length - 1) {
             matches++;
-            console.log("MATCH FOUND!");
+            // console.log("MATCH FOUND!");
             break;
         }
     }
 }
 
-console.log(matches);
+// console.log(matches);
