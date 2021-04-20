@@ -161,3 +161,54 @@
     // console.log(merge([1, 2, 9], [4, 76]));
 }
 // ==========================================================================================
+
+// QUICK SORT
+// pick a pivot. put all the elements less than pivot to its left, and greater ones to right
+// do this recursively
+{
+    console.clear();
+    let arr = [2, 1, 9, 76, 4];
+
+    // arr = [2, 1, 3, 6];
+    // console.log(pivot(arr));
+    quickSort(arr);
+    console.log(arr);
+
+    function quickSort(arr, left = 0, right = arr.length - 1) {
+        if (left < right) {
+
+            let pivotIndex = pivot(arr, left, right);
+
+            quickSort(arr, left, pivotIndex - 1);
+
+            quickSort(arr, pivotIndex + 1, right);
+        }
+        return arr;
+    }
+
+    // will return the pivot index : the position of element in sorted array
+    function pivot(arr, start = 0, end = arr.length - 1) {
+        var pivot = arr[start];
+        var swapIdx = start;
+
+        // begin with element next to pivot
+        for (let i = start + 1; i < arr.length; i++) {
+            if (arr[i] < pivot) {
+                swapIdx++;
+                swap(arr, swapIdx, i);
+            }
+            // console.log(arr);
+        }
+
+        swap(arr, swapIdx, start);
+        // console.log(arr);
+        return swapIdx;
+    }
+
+    function swap(arr, i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+}
