@@ -64,9 +64,9 @@
     console.clear();
     let arr = [2, 4, 3, 6, 7, 5, -1, 9, 8];
     arr = [8, 1, 2, 3, 4, 5, 6, 7];
-    insertionSort(arr);
+    selectionSort(arr);
 
-    function insertionSort(arr) {
+    function selectionSort(arr) {
         for (let i = 0; i < arr.length; i++) {
             let lowest = i;
             for (let j = i + 1; j < arr.length; j++) {
@@ -77,7 +77,7 @@
             if (i !== lowest) {
                 console.log(arr);
                 console.log("SWAPPING TO:");
-                
+
                 let temp = arr[i];
                 arr[i] = arr[lowest];
                 arr[lowest] = temp;
@@ -88,3 +88,76 @@
         }
     }
 }
+
+// ==========================================================================================
+// INSERTION SORT
+// assume left part of the array is sorted
+// pick one element at a time and insert in its correct position
+{
+    console.clear();
+    //            i
+    let arr = [2, 1, 9, 76, 4];
+    // j  v
+    // arr = [1,2,3,4,5,6,7];
+    // arr.reverse();
+    insertionSort(arr);
+
+    function insertionSort(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            let currentVal = arr[i]; //the element whose position we are going to find
+
+            for (var j = i - 1; j >= 0 && currentVal < arr[j]; j--) {
+                console.log(i, j, arr);
+                arr[j + 1] = arr[j];
+            }
+
+            console.log("PASS Complete!");
+            arr[j + 1] = currentVal;
+            console.log(i, j, arr);
+        }
+    }
+
+    console.log(arr);
+}
+// ==========================================================================================
+
+// MERGE SORT
+{
+    console.clear();
+
+    let arr = [2, 1, 9, 76, 4];
+
+    console.log(mergeSort(arr));
+
+    function mergeSort(arr) {
+        if (arr.length <= 1) return arr;
+
+        let mid = Math.floor(arr.length / 2);
+        let left = mergeSort(arr.slice(0, mid));
+        let right = mergeSort(arr.slice(mid));
+
+        return merge(left, right);
+    }
+
+    function merge(a, b) {
+        let c = [], left = 0, right = 0;
+
+        while (left < a.length && right < b.length) {
+            if (a[left] < b[right])
+                c.push(a[left++]);
+            else
+                c.push(b[right++]);
+        }
+
+        while (left < a.length)
+            c.push(a[left++]);
+
+        while (right < b.length)
+            c.push(b[right++]);
+
+        return c;
+    }
+
+    // console.log(merge([1, 2, 9], [4, 76]));
+}
+// ==========================================================================================
