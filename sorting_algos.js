@@ -212,3 +212,51 @@
     }
 
 }
+
+//  all the above sorting algos. fall into group of comparison sorts since we do comparison there
+//  RADIX SORT
+// this algo. does not use comparisons, It makes use of buckets
+{
+    console.clear();
+
+    let arr = [9, 1534, 99, 123, 11, 65, 888, 6541,51,7];
+
+    // console.log(getDigit(1534,0));
+    // console.log(digitCount(12));
+    // console.log("max=", mostDigits(arr));
+
+    console.log(radixSort(arr));
+
+    function getDigit(num, i) { // will return the digit at i from right end
+        return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+    }
+
+    function digitCount(num) {
+        if (num === 0) return 1;
+        return Math.floor(Math.log10(Math.abs(num))) + 1;
+    }
+
+    function mostDigits(arr) {
+        let maxDigits = 0;
+        for (let i = 0; i < arr.length; i++)
+            maxDigits = Math.max(maxDigits, digitCount(arr[i]));
+
+        return maxDigits;
+    }
+
+    function radixSort(arr) {
+        let maxDigits = mostDigits(arr);
+
+        for (let k = 0; k < maxDigits; k++) {
+            let bucket = Array.from({ length: 10 }, () => []);
+            for (let i = 0; i < arr.length; i++) {
+                let digit = getDigit(arr[i], k);
+                bucket[digit].push(arr[i]);
+            }
+            // console.log(bucket);
+            arr = [].concat(...bucket);
+        }
+
+        return arr;
+    }
+}

@@ -242,3 +242,11 @@ const person = {
 }
 let {age, phone, firstname} = person; //order does not matter
 // console.log('>> age',age,' firstname',firstname,' phone', phone);
+
+// spread operator
+let nums = [3,1,2,6];
+let nums1 = [[1,3],[6,7], [22,33]];
+let nums2 = [...nums];
+// console.log(...nums);
+// console.log([].concat(...nums1));
+// console.log(nums2);
