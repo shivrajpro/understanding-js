@@ -12,6 +12,17 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
+    print() {
+        let arr = [];
+
+        let temp = this.head;
+        while (temp !== null) {
+            arr.push(temp.val);
+            temp = temp.next;
+        }
+        console.log('>> arr', arr);
+    }
+
     traverse() {
         var current = this.head;
 
@@ -178,10 +189,28 @@ class SinglyLinkedList {
         // console.log('>> list.remove(0)', list.remove(0));
 
     }
+
+    reverse() {
+        // swap head and tail
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+
+        let next = null, prev = null;
+
+        for (let i = 0; i < this.length; i++) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+
+        return this;
+    }
 }
 
 var list = new SinglyLinkedList();
 list.push(1).push(2).push(3).push(4);
-list.traverse();
-list.traverse();
-console.log('>> list', list);
+list.print();
+list.reverse();
+list.print();
