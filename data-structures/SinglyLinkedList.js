@@ -64,7 +64,7 @@ class SinglyLinkedList {
             while (pre.next !== null && pre.next.next != null)
                 pre = pre.next;
 
-            var val = pre.next.val;
+            var temp = pre.next;
 
             pre.next = null;
             this.length--;
@@ -74,14 +74,14 @@ class SinglyLinkedList {
                 this.tail = null;
             }
             // console.log(">> pre", pre);
-            return val;
+            return temp;
         }
     }
 
     // remove first
     shift() {
         if (this.head !== null) {
-            var temp = this.head.val;
+            var temp = this.head;
 
             this.head = this.head.next;
             this.length--;
@@ -104,12 +104,12 @@ class SinglyLinkedList {
                 temp = temp.next;
             // console.log('>> temp',temp);
 
-            return temp.val;
+            return temp;
         }
     }
-    
+
     // set value at index
-    set(index,val) {
+    set(index, val) {
         if (index < 0 || index > this.length) return;
 
         if (this.head != null) {
@@ -123,12 +123,65 @@ class SinglyLinkedList {
         }
     }
 
+    // insert node at index
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false;
+
+        var newNode = new Node(val);
+
+        if (index === 0)
+            this.unshift(val);
+        else if (index === this.length)
+            this.push(val);
+        else {
+
+            var temp = this.head;
+
+            while (index-- !== 1) //coz we need to insert node after temp
+                temp = temp.next;
+
+            // console.log('>> temp', temp);
+            newNode.next = temp.next;
+            temp.next = newNode;
+
+            this.length++;
+        }
+
+        return true;
+        // console.log('>> list.insert(0, 5)', list.insert(0, 5));
+        // console.log('>> list.insert(1, 5)', list.insert(1,5));
+        // console.log('>> list.insert(2, 5)', list.insert(2,5));
+        // console.log('>> list.insert(-1, 5)', list.insert(-1, 5));
+        // console.log('>> list.insert(5, 5)', list.insert(5, 5));
+
+    }
+
+    // remove node at index
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+
+        if (index === 0)
+            return this.shift();
+        else if (index === this.length - 1)
+            return this.pop();
+        else {
+            var foundNode = this.get(index - 1);
+            var removed = foundNode.next;
+            // console.log('>> foundNode', foundNode);
+            foundNode.next = removed.next;
+            this.length--;
+
+            return removed;
+        }
+        // console.log('>> list.remove(1)', list.remove(1));
+        // console.log('>> list.remove(3)', list.remove(3));
+        // console.log('>> list.remove(0)', list.remove(0));
+
+    }
 }
 
 var list = new SinglyLinkedList();
-// console.log('>> list', list);
 list.push(1).push(2).push(3).push(4);
 list.traverse();
-console.log('>> list.set(1,5)', list.set(1,5));
 list.traverse();
-// list.traverse();
+console.log('>> list', list);
