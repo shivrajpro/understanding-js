@@ -250,3 +250,9 @@ let nums2 = [...nums];
 // console.log(...nums);
 // console.log([].concat(...nums1));
 // console.log(nums2);
+
+
+// shuffle characters in a string
+let str = "javascript";
+let shuffled = str.split('').sort(()=>(Math.random()-0.5)).join('');
+console.log('>> shuffled',shuffled);
