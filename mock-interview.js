@@ -250,8 +250,23 @@ let formattedTime = hr + time.substring(2, 5);
 // decimal to hex
 let decimal = 17;
 let hex = decimal.toString(16);
-console.log("hex=",hex);
+// console.log("hex=",hex);
 
-hex="4A";
+hex = "4A";
 // hex to decimal
-console.log("decimal=",parseInt(hex,16));
+// console.log("decimal=",parseInt(hex,16));
+
+// ==========================================================================================
+// question: Find the minimum and maximum sum of N-1 elements of the array
+// solution:
+// 1. Excluding max element will give the min. sum
+// 2. Exluding min element with give the max. sum
+
+arr = [1,2,3,4,5];
+let min = Math.min.apply(null, arr);
+let max = Math.max.apply(null, arr);
+
+sum = arr.reduce((acc, el)=>acc+el,0);
+console.log('>>',sum);
+console.log('>> (sum-min) Max Sum',sum-min);
+console.log('>> (sum-max) Min Sum',sum-max);
