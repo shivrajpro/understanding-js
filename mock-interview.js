@@ -58,7 +58,7 @@ const obj1 = {
 // const clone = /** your code */
 // clone.a.b.c = 2
 
-// const clone = Object.assign({}, obj1);
+// const clone = Object.assign({}, obj1);// won't work
 const clone = JSON.parse(JSON.stringify(obj1));
 clone.a.b.c = 2;
 // console.log('c from obj1=', obj1.a.b.c);
@@ -113,9 +113,12 @@ c.sort(function (a, b) { return a - b; }) // return b-a; console.log('a=',a,'b='
 // console.log('concat = ', c);
 
 // console.log(a+b); //1,2,5,7,92,5,7,12,100
+// ==================================================================================
 
-
+// question: whats the output?
+// obj2.getX(); // will log undefined since x is property of obj2 and inner is a prop of getX
 // given
+
 const obj2 = {
     x: 1,
     getX() {
@@ -137,9 +140,6 @@ const obj2 = {
     //     inner();
     // }
 }
-
-// whats the output?
-// obj2.getX(); // will log undefined since x is property of obj2 and inner is a prop of getX
 
 let ary = [1, 2, 5, 7];
 
@@ -262,11 +262,81 @@ hex = "4A";
 // 1. Excluding max element will give the min. sum
 // 2. Exluding min element with give the max. sum
 
-arr = [1,2,3,4,5];
+arr = [1, 2, 3, 4, 5];
 let min = Math.min.apply(null, arr);
 let max = Math.max.apply(null, arr);
 
-sum = arr.reduce((acc, el)=>acc+el,0);
-console.log('>>',sum);
-console.log('>> (sum-min) Max Sum',sum-min);
-console.log('>> (sum-max) Min Sum',sum-max);
+sum = arr.reduce((acc, el) => acc + el, 0);
+// console.log('>>',sum);
+// console.log('>> (sum-min) Max Sum',sum-min);
+// console.log('>> (sum-max) Min Sum',sum-max);
+
+
+// question: sum of elements in a n*n matrix
+
+const matrix = [
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+]
+
+sum = 0;
+for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        // console.log('>> matrix[i][j]',matrix[i][j]);
+        sum += matrix[i][j];
+    }
+}
+
+
+// question: polyfill for reduce
+// testcases: 2nd arg is optional, in such case accumulator gets initialized with first value
+arr = [1, 2, 3];
+
+sum = arr.reduce((acc, el) => acc + el, 0);
+// console.log('>> sum',sum);
+
+Array.prototype.myReduce = function (callback, intialValue) {
+
+    // console.log('>> this', this);
+
+    console.log('>> typeof cb',typeof(callback));
+    console.log('>> instance of cb',(callback instanceof Function));
+    
+    callback = function (acc) {
+        console.log('>> this', this);
+
+        var acc = intialValue || this[0];
+
+        for (const val of this) {
+            acc += val;
+        }
+
+        return acc;
+    }
+
+
+    var result = callback.call(this);
+    // callback(4,5);
+    // callback();
+    console.log('>> result', result);
+
+    return result;
+}
+
+// sum = arr.myReduce((acc, el) => acc + el, 0);
+// sum = arr.myReduce(1, 0);
+// console.log('>> sum', sum);
+
+// question: write your own promise
+function myPromise(resolve, reject) {
+    var data = 4;
+    this.then = function (callback) {
+        callback(data);
+    }
+}
+
+new myPromise().then((data)=>{
+    console.log('>> resolved',data);
+});

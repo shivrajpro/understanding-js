@@ -3,7 +3,7 @@
 // place order
 // call a function only once after 2 seconds of last click
 const myLog = function (...params) {
-    console.log(">>",...params);
+    console.log(">>", ...params);
 }
 const debounce = function (callback, delay) {
     let timeOutId;
@@ -79,21 +79,21 @@ function getName() {
 
 //call, apply and bind
 let name1 = {
-    firstname:"shivraj",
-    lastname:"hulbatte"
+    firstname: "shivraj",
+    lastname: "hulbatte"
 }
 
 let name2 = {
-    firstname:"rahul",
-    lastname:"dravid"
+    firstname: "rahul",
+    lastname: "dravid"
 }
 
 let printFullName = function () {
-    myLog(this.firstname+" "+this.lastname);
+    myLog(this.firstname + " " + this.lastname);
 }
 
 let printUserData = function (hometown, state) {
-    myLog(this.firstname+" "+this.lastname+" from "+hometown+", "+state);
+    myLog(this.firstname + " " + this.lastname + " from " + hometown + ", " + state);
 }
 /*
 // This method invokes a method (function) by specifying the owner object.
@@ -151,22 +151,22 @@ logUserData.myBind(name2, "Bangalore")("KA","India");
 // prototype and prototypal inheritance
 let animal = {
     eats: true,
-    walk(){
+    walk() {
         myLog("animal walks");
     }
 }
 
 let rabbit = {
     runs: true,
-    walk(){
+    walk() {
         myLog("rabbit walks");
     },
     __proto__: animal
 }
 
 let lion = {
-    sleeps:true,
-    hunts(){
+    sleeps: true,
+    hunts() {
         myLog("lion hunts");
     }
 }
@@ -210,20 +210,20 @@ document.getElementById('child').addEventListener('click', ()=>{
 */
 
 // event delegation
-document.querySelector("#categories").addEventListener('click', (e)=>{
-    myLog('e',e.target.id);
-    window.location.href = "/#"+e.target.id;
+document.querySelector("#categories").addEventListener('click', (e) => {
+    myLog('e', e.target.id);
+    window.location.href = "/#" + e.target.id;
 })
 
 // behaviour pattern
 // var firstName = document.getElementById('firstName');
 var firstName = document.querySelector('input');
-document.querySelector("#myForm").addEventListener('keyup', (e)=>{
+document.querySelector("#myForm").addEventListener('keyup', (e) => {
     // myLog('e',e);
-    console.log('val=',firstName.value);
-    if(e.target.dataset.uppercase != undefined)
+    console.log('val=', firstName.value);
+    if (e.target.dataset.uppercase != undefined)
         e.target.value = e.target.value.toUpperCase();
-    console.log('attr val =',firstName.getAttribute('value')); // prints always the value from html
+    console.log('attr val =', firstName.getAttribute('value')); // prints always the value from html
 })
 // console.log('outside',firstName.getAttribute('value'));
 
@@ -236,16 +236,16 @@ function foo() {
 }
 // foo();
 const person = {
-    firstname:"shivraj",
-    age:"24",
-    phone:"9921463549"
+    firstname: "shivraj",
+    age: "24",
+    phone: "9921463549"
 }
-let {age, phone, firstname} = person; //order does not matter
+let { age, phone, firstname } = person; //order does not matter
 // console.log('>> age',age,' firstname',firstname,' phone', phone);
 
 // spread operator
-let nums = [3,1,2,6];
-let nums1 = [[1,3],[6,7], [22,33]];
+let nums = [3, 1, 2, 6];
+let nums1 = [[1, 3], [6, 7], [22, 33]];
 let nums2 = [...nums];
 // console.log(...nums);
 // console.log([].concat(...nums1));
@@ -254,5 +254,12 @@ let nums2 = [...nums];
 
 // shuffle characters in a string
 let str = "javascript";
-let shuffled = str.split('').sort(()=>(Math.random()-0.5)).join('');
-console.log('>> shuffled',shuffled);
+let shuffled = str.split('').sort(() => (Math.random() - 0.5)).join('');
+console.log('>> shuffled', shuffled);
+const a = [1, 2, 3];
+const doubled = a.map((num) => {
+    return num * 2;
+});
+console.log('>> a', a);
+console.log('>> doubled', doubled);
+// doubled = [2, 4, 6]
