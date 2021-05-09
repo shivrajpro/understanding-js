@@ -332,11 +332,39 @@ Array.prototype.myReduce = function (callback, intialValue) {
 // question: write your own promise
 function myPromise(resolve, reject) {
     var data = 4;
+
     this.then = function (callback) {
         callback(data);
     }
 }
 
 new myPromise().then((data)=>{
-    console.log('>> resolved',data);
+    // console.log('>> resolved',data);
 });
+
+// question: this is a math puzzle
+// f(1)(2)(3) //9
+// f(2)(2)(1) //4
+// f(2,2,1) //4
+// f() //0
+
+// answer: add first two args and multiply it with 3rd
+
+function f(a,b,c) {
+    console.log(a,b,c);
+    if(a && b && c){
+        return (a+b)*c;
+    }else if(a){
+        return function (v1) {
+            return function name(v2) {
+                return (a+v1)*v2;
+            }
+        }
+    }
+
+    return 0;
+}
+
+// var answer = f(2,2,1) //4 
+answer = f(1)(2)(3) //9
+console.log('>> answer',answer);
