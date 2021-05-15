@@ -63,5 +63,74 @@ function moveZeroes2(nums) {
     }
     console.log('>> nums', nums);
 }
-moveZeroes2([0, 1, 0, 3, 12]);
-moveZeroes2([0, 0, 1]);
+// moveZeroes2([0, 1, 0, 3, 12]);
+// moveZeroes2([0, 0, 1]);
+// ===================================================================================
+// question: balanced paranthesis https://leetcode.com/problems/valid-parentheses/
+function hasBalancedParanthesis(str) {
+    var myStack = [];
+    var myMap = {
+        ']': '[',
+        ')': '(',
+        '}': '{'
+    };
+    for (var i = 0; i < str.length; i++) {
+        var bracket = str[i];
+        if ("[({".indexOf(bracket) > -1)
+            myStack.push(bracket);
+        else if (myMap[bracket] && myMap[bracket] !== myStack.pop())
+            return false;
+    }
+    return myStack.length === 0;
+    console.log('>> hasBalancedParanthesis("()")', hasBalancedParanthesis("()"));
+    console.log('>> hasBalancedParanthesis("()[]{}")', hasBalancedParanthesis("()[]{}"));
+    console.log('>> hasBalancedParanthesis("(]")', hasBalancedParanthesis("(]"));
+    console.log('>> hasBalancedParanthesis("([)]")', hasBalancedParanthesis("([)]"));
+}
+// ===================================================================================
+// question: Detect Capital https://leetcode.com/problems/detect-capital/
+// All letters in this word are capitals, like "USA".
+// All letters in this word are not capitals, like "leetcode".
+// Only the first letter in this word is capital, like "Google"
+var detectCapitalUse = function (word) {
+    if (allLowerCase(word))
+        return true;
+    if (allCaps(word))
+        return true;
+    for (var i = 1; i < word.length; i++) {
+        // if 1st char is Capital and anyone of the other char is not capital return false
+        if (isCapital(word[i]))
+            return false;
+    }
+    if (isCapital(word[0]))
+        return true;
+    return true;
+};
+console.log('>> allLowerCase("leetcode")', allLowerCase("leetcode"));
+console.log('>> detectCapitalUse("USA")', detectCapitalUse("USA"));
+console.log('>> detectCapitalUse("FlaG")', detectCapitalUse("FlaG"));
+console.log('>> detectCapitalUse("Leetcode")', detectCapitalUse("Leetcode"));
+console.log('>> detectCapitalUse("ffffffffffffffffffffF")', detectCapitalUse("ffffffffffffffffffffF"));
+function allLowerCase(s) {
+    for (var i = 0; i < s.length; i++) {
+        var asciiCode = s.charCodeAt(i);
+        // console.log(">> asciiCode", asciiCode);
+        // console.log(">> fromCharCode", String.fromCharCode(asciiCode));
+        if (asciiCode < 97 || asciiCode > 122)
+            return false;
+    }
+    return true;
+}
+function isCapital(c) {
+    return (c.charCodeAt(0) >= 65 && c.charCodeAt(0) <= 91);
+}
+function allCaps(s) {
+    for (var i = 0; i < s.length; i++) {
+        var asciiCode = s.charCodeAt(i);
+        // console.log(">> asciiCode", asciiCode);
+        // console.log(">> fromCharCode", String.fromCharCode(asciiCode));
+        if (asciiCode < 65 || asciiCode > 91)
+            return false;
+    }
+    return true;
+}
