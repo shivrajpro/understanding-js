@@ -351,7 +351,7 @@ new myPromise().then((data)=>{
 // answer: add first two args and multiply it with 3rd
 
 function f(a,b,c) {
-    console.log(a,b,c);
+    // console.log(a,b,c);
     if(a && b && c){
         return (a+b)*c;
     }else if(a){
