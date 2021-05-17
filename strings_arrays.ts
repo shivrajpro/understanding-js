@@ -26,7 +26,7 @@ function isVowel(character) {
     return "aeiou".indexOf(character.toLowerCase()) !== -1;
 }
 
-// ===================================================================================
+// ==========X=================X=============================X===========================
 // question: move zeroes to end (in place) https://leetcode.com/problems/move-zeroes/
 // [0,1,0,3,12] --> [1,0,3,12,12] --> [1,0,3,12,0] --> [1,3,12,0,0]
 //  i
@@ -76,7 +76,7 @@ function moveZeroes2(nums: number[]) {
 // moveZeroes2([0, 1, 0, 3, 12]);
 // moveZeroes2([0, 0, 1]);
 
-// ===================================================================================
+// ==========X=================X=============================X===========================
 
 // question: balanced paranthesis https://leetcode.com/problems/valid-parentheses/
 function hasBalancedParanthesis(str: string) {
@@ -123,12 +123,12 @@ var detectCapitalUse = function (word: string) {
     if (isCapital(word[0])) return true;
     
     return true;
+    console.log('>> allLowerCase("leetcode")',allLowerCase("leetcode"));
+    console.log('>> detectCapitalUse("USA")',detectCapitalUse("USA"));
+    console.log('>> detectCapitalUse("FlaG")', detectCapitalUse("FlaG"));
+    console.log('>> detectCapitalUse("Leetcode")', detectCapitalUse("Leetcode"));
+    console.log('>> detectCapitalUse("ffffffffffffffffffffF")', detectCapitalUse("ffffffffffffffffffffF"));
 }
-console.log('>> allLowerCase("leetcode")',allLowerCase("leetcode"));
-console.log('>> detectCapitalUse("USA")',detectCapitalUse("USA"));
-console.log('>> detectCapitalUse("FlaG")', detectCapitalUse("FlaG"));
-console.log('>> detectCapitalUse("Leetcode")', detectCapitalUse("Leetcode"));
-console.log('>> detectCapitalUse("ffffffffffffffffffffF")', detectCapitalUse("ffffffffffffffffffffF"));
 
 function allLowerCase(s: string) {
     for (let i = 0; i < s.length; i++) {
@@ -163,3 +163,25 @@ function allCaps(s:string) {
 
     return true;    
 }
+
+
+// ==========X=================X=============================X===========================
+// question: https://leetcode.com/problems/length-of-last-word/
+var lengthOfLastWord = function(s:string) {
+    const words = s.split(" ");
+    let lastWord = words[words.length - 1];
+    
+    for (let i = words.length - 1; i >=0; i--)
+        if(words[i].length>0){
+            lastWord = words[i];
+            break;
+        }
+
+    console.log('>> lastWord', lastWord);
+    
+    return lastWord.length;
+    console.log('>> lengthOfLastWord',lengthOfLastWord("Hello World"));
+    console.log('>> lengthOfLastWord',lengthOfLastWord(" "));
+    console.log('>> lengthOfLastWord',lengthOfLastWord("a "));
+    console.log('>> lengthOfLastWord',lengthOfLastWord("Today is a nice day"));
+};
