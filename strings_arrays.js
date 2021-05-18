@@ -173,5 +173,5 @@ var average = function (salary) {
     var result = (sum - min - max) / (salary.length - 2);
     console.log('>> min max sum', min, max, sum);
     return result;
+    console.log('>> average', average([4000, 3000, 1000, 2000]));
 };
-console.log('>> average', average([4000, 3000, 1000, 2000]));
