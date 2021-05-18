@@ -179,4 +179,21 @@ let difference = a.filter((n) => b.indexOf(n) == -1);
 //b-a
 // let difference = b.filter((n)=>a.indexOf(n)==-1);
 
-console.log(difference);
+// console.log(difference);
+// 11. flatten this array: [1,2,[4,5,6], [[3,4], [7,8]]] => [1,2,4,5,6,3,4,7,8]
+function flattenArray(arr) {
+    const result = [];
+
+    arr.forEach(e => {
+        if(Array.isArray(e)){
+            result.push(...flattenArray(e));
+        }else{
+            result.push(e);
+        }
+    });
+
+    return result;
+}
+
+console.log('>> flattenArray([[1,2],3,[3,4]])',flattenArray([[1,2],3,[3,4]]));
+console.log('>> flattenArray([1,2,[4,5,6], [[3,4], [7,8]]])',flattenArray([1,2,[4,5,6], [[3,4], [7,8]]]));
