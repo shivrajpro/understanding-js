@@ -151,3 +151,27 @@ var lengthOfLastWord = function (s) {
     console.log('>> lengthOfLastWord', lengthOfLastWord("a "));
     console.log('>> lengthOfLastWord', lengthOfLastWord("Today is a nice day"));
 };
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/add-binary/
+// question: Given two binary strings a and b, return their sum as a binary string
+var addBinary = function (a, b) {
+    var n1 = parseInt(a, 2);
+    var n2 = parseInt(b, 2);
+    var sum = n1 + n2;
+    console.log('>> addBinary("1010","1")', addBinary("11", "1"));
+    console.log('>> addBinary("1010","1011")', addBinary("1010", "1011"));
+};
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/add-binary/
+// question: Given an array of unique integers salary where salary[i] 
+// is the salary of the employee i.
+// Return the average salary of employees excluding the minimum and maximum salary.
+var average = function (salary) {
+    var min = Math.min.apply(null, salary);
+    var max = Math.max.apply(null, salary);
+    var sum = salary.reduce(function (acc, val) { return acc + val; });
+    var result = (sum - min - max) / (salary.length - 2);
+    console.log('>> min max sum', min, max, sum);
+    return result;
+};
+console.log('>> average', average([4000, 3000, 1000, 2000]));
