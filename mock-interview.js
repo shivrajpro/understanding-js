@@ -60,7 +60,8 @@ const obj1 = {
 
 // const clone = Object.assign({}, obj1);// won't work
 const clone = JSON.parse(JSON.stringify(obj1));
-clone.a.b.c = 2;
+// clone.a.b.c = 2;
+// clone.a = "clone.a";
 // console.log('c from obj1=', obj1.a.b.c);
 
 // given
@@ -86,7 +87,7 @@ const b = [2, 5, 7, 12, 100];
 function MERGE_SORT(a, b) {
     let c = [];
 
-    let first = 0, second = 0, result = 0;
+    let first = 0, second = 0;
 
     while (first < a.length && second < b.length) {
         if (a[first] < b[second]) {
@@ -140,7 +141,7 @@ const obj2 = {
     //     inner();
     // }
 }
-
+// obj2.getX();
 let ary = [1, 2, 5, 7];
 
 let sum = ary.reduce((acc, el) => acc + el, 10);
@@ -218,11 +219,11 @@ for (let i = 0; i < arr.length - 1; i++) {
 
 // ==========================================================================================
 // find the output
-arr = [5, 120, 15, 21];
-for (let i = 0; i < arr.length; i++) {
+arr1 = [5, 120, 15, 21];
+for (let i = 0; i < arr1.length; i++) {
     setTimeout(() => {
-        // console.log(`Index:${i}, element:${arr[i]}`);
-    }, arr[i]);
+        // console.log(`Index:${i}, element:${arr1[i]}`);
+    }, arr1[i]);
 }
 // my answer: [0,5], [2,15], [3, 21], [1, 120]
 // tip: in sorted order
@@ -299,35 +300,31 @@ sum = arr.reduce((acc, el) => acc + el, 0);
 
 Array.prototype.myReduce = function (callback, intialValue) {
 
-    // console.log('>> this', this);
-
-    console.log('>> typeof cb',typeof(callback));
-    console.log('>> instance of cb',(callback instanceof Function));
+    let accumulator = intialValue || undefined;
     
-    callback = function (acc) {
-        console.log('>> this', this);
-
-        var acc = intialValue || this[0];
-
-        for (const val of this) {
-            acc += val;
-        }
-
-        return acc;
+    for (let i = 0; i < this.length; i++){
+        if(accumulator)
+            accumulator = callback.call(accumulator, accumulator, this[i], this);
+        else
+            accumulator = this[i];
     }
 
 
-    var result = callback.call(this);
-    // callback(4,5);
-    // callback();
-    console.log('>> result', result);
-
-    return result;
+    return accumulator;
 }
 
-// sum = arr.myReduce((acc, el) => acc + el, 0);
+sum = arr.myReduce((acc, el) => acc + el, 0);
 // sum = arr.myReduce(1, 0);
-// console.log('>> sum', sum);
+console.log('>> sum', sum);
+const queryString = "cat=meow&duck=quack&dog=woof";
+const queryObject = queryString.split("&").myReduce((accum, current) => {
+  const splitString = current.split("=")
+  accum[splitString[0]] = splitString[1];
+  return accum;
+}, {})
+console.log(queryObject);
+
+// =============X===========================X==========================X========================
 
 // question: write your own promise
 function myPromise(resolve, reject) {
@@ -367,4 +364,4 @@ function f(a,b,c) {
 
 // var answer = f(2,2,1) //4 
 answer = f(1)(2)(3) //9
-console.log('>> answer',answer);
+// console.log('>> answer',answer);
