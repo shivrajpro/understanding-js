@@ -255,11 +255,26 @@ let nums2 = [...nums];
 // shuffle characters in a string
 let str = "javascript";
 let shuffled = str.split('').sort(() => (Math.random() - 0.5)).join('');
-console.log('>> shuffled', shuffled);
+// console.log('>> shuffled', shuffled);
 const a = [1, 2, 3];
 const doubled = a.map((num) => {
     return num * 2;
 });
-console.log('>> a', a);
-console.log('>> doubled', doubled);
+// console.log('>> a', a);
+// console.log('>> doubled', doubled);
 // doubled = [2, 4, 6]
+
+
+// Object.assign
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+target.d = 6;
+source.e = 7;
+console.log('>> source',source);
+console.log('>> target',target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log('>> returnedTarget',returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
