@@ -5,11 +5,12 @@ function myLog(p1, p2 = "") {
 // A Promise is a JavaScript object that links producing code and consuming code
 // a promise
 let promise = new Promise(function (resolve, reject) {
-    console.log('promise first line');
+    // console.log('promise first line');
     setTimeout(function () {
-        resolve('Promise resolved')
+        // resolve('Promise resolved');
+        reject('Promise rejected');
     }, 6000);
-    console.log('promise last line');
+    // console.log('promise last line');
 });
 
 // async function
@@ -41,7 +42,7 @@ function noAsyncFunc() {
 
 // calling the async function
 // noAsyncFunc();
-asyncFunc();
+// asyncFunc();
 
 // -----------------X--------------------------X--------------------------X--------------------
 // sessionStorage.setItem('data', 'session 5500');
@@ -74,4 +75,22 @@ Promise.allSettled([p1, p3, p2, p4]).then((values) => {
     // console.log('>> values', values);
 }).catch((err)=>{
     // console.error('>> err', err);
+})
+
+async function asyncFn2() {
+    console.log('first line');
+
+    let result =  await promise;
+
+    console.log('after await');
+    
+    return result;
+}
+
+asyncFn2().then((d)=>{
+    console.log('>> in then',d);
+}).catch((e)=>{
+    console.log('>> in catch',e);
+}).finally(()=>{
+    console.log('>> finally');
 })
