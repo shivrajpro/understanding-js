@@ -27,7 +27,7 @@ function isVowel(character) {
 }
 
 // ==========X=================X=============================X===========================
-// question: move zeroes to end (in place) https://leetcode.com/problems/move-zeroes/
+// question 2: move zeroes to end (in place) https://leetcode.com/problems/move-zeroes/
 // [0,1,0,3,12] --> [1,0,3,12,12] --> [1,0,3,12,0] --> [1,3,12,0,0]
 //  i
 // solution 1: (did not work on leetcode)
@@ -78,7 +78,7 @@ function moveZeroes2(nums: number[]) {
 
 // ==========X=================X=============================X===========================
 
-// question: balanced paranthesis https://leetcode.com/problems/valid-parentheses/
+// question 3: balanced paranthesis https://leetcode.com/problems/valid-parentheses/
 function hasBalancedParanthesis(str: string) {
     let myStack = [];
     let myMap = {
@@ -104,7 +104,7 @@ function hasBalancedParanthesis(str: string) {
 
 
 // ===================================================================================
-// question: Detect Capital https://leetcode.com/problems/detect-capital/
+// question 4: Detect Capital https://leetcode.com/problems/detect-capital/
 // All letters in this word are capitals, like "USA".
 // All letters in this word are not capitals, like "leetcode".
 // Only the first letter in this word is capital, like "Google"
@@ -166,7 +166,7 @@ function allCaps(s:string) {
 
 
 // ==========X=================X=============================X===========================
-// question: https://leetcode.com/problems/length-of-last-word/
+// question 5: https://leetcode.com/problems/length-of-last-word/
 var lengthOfLastWord = function(s:string) {
     const words = s.split(" ");
     let lastWord = words[words.length - 1];
@@ -188,7 +188,7 @@ var lengthOfLastWord = function(s:string) {
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/add-binary/
-// question: Given two binary strings a and b, return their sum as a binary string
+// question 6: Given two binary strings a and b, return their sum as a binary string
 
 var addBinary = function(a:string, b:string) {
     const n1 = parseInt(a, 2);
@@ -204,7 +204,7 @@ var addBinary = function(a:string, b:string) {
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/add-binary/
-// question: Given an array of unique integers salary where salary[i] 
+// question 7: Given an array of unique integers salary where salary[i] 
 // is the salary of the employee i.
 // Return the average salary of employees excluding the minimum and maximum salary.
 
