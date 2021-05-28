@@ -220,3 +220,13 @@ var average = function(salary:number[]) {
     console.log('>> average',average([4000,3000,1000,2000]));
 };
 
+
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/truncate-sentence/
+// question 7: Truncate Sentence
+
+var truncateSentence = function(s:string, k) {
+    s = s.trim();
+    return s.split(' ').slice(0,k).join(' ');
+    console.log('>> truncateSentence("Hello how are you Contestant", 4)',truncateSentence("Hello how are you Contestant", 4));
+};

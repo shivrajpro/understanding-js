@@ -24,7 +24,7 @@ function isVowel(character) {
     return "aeiou".indexOf(character.toLowerCase()) !== -1;
 }
 // ==========X=================X=============================X===========================
-// question: move zeroes to end (in place) https://leetcode.com/problems/move-zeroes/
+// question 2: move zeroes to end (in place) https://leetcode.com/problems/move-zeroes/
 // [0,1,0,3,12] --> [1,0,3,12,12] --> [1,0,3,12,0] --> [1,3,12,0,0]
 //  i
 // solution 1: (did not work on leetcode)
@@ -66,7 +66,7 @@ function moveZeroes2(nums) {
 // moveZeroes2([0, 1, 0, 3, 12]);
 // moveZeroes2([0, 0, 1]);
 // ==========X=================X=============================X===========================
-// question: balanced paranthesis https://leetcode.com/problems/valid-parentheses/
+// question 3: balanced paranthesis https://leetcode.com/problems/valid-parentheses/
 function hasBalancedParanthesis(str) {
     var myStack = [];
     var myMap = {
@@ -88,7 +88,7 @@ function hasBalancedParanthesis(str) {
     console.log('>> hasBalancedParanthesis("([)]")', hasBalancedParanthesis("([)]"));
 }
 // ===================================================================================
-// question: Detect Capital https://leetcode.com/problems/detect-capital/
+// question 4: Detect Capital https://leetcode.com/problems/detect-capital/
 // All letters in this word are capitals, like "USA".
 // All letters in this word are not capitals, like "leetcode".
 // Only the first letter in this word is capital, like "Google"
@@ -135,7 +135,7 @@ function allCaps(s) {
     return true;
 }
 // ==========X=================X=============================X===========================
-// question: https://leetcode.com/problems/length-of-last-word/
+// question 5: https://leetcode.com/problems/length-of-last-word/
 var lengthOfLastWord = function (s) {
     var words = s.split(" ");
     var lastWord = words[words.length - 1];
@@ -153,7 +153,7 @@ var lengthOfLastWord = function (s) {
 };
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/add-binary/
-// question: Given two binary strings a and b, return their sum as a binary string
+// question 6: Given two binary strings a and b, return their sum as a binary string
 var addBinary = function (a, b) {
     var n1 = parseInt(a, 2);
     var n2 = parseInt(b, 2);
@@ -163,7 +163,7 @@ var addBinary = function (a, b) {
 };
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/add-binary/
-// question: Given an array of unique integers salary where salary[i] 
+// question 7: Given an array of unique integers salary where salary[i] 
 // is the salary of the employee i.
 // Return the average salary of employees excluding the minimum and maximum salary.
 var average = function (salary) {
@@ -174,4 +174,12 @@ var average = function (salary) {
     console.log('>> min max sum', min, max, sum);
     return result;
     console.log('>> average', average([4000, 3000, 1000, 2000]));
+};
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/truncate-sentence/
+// question 7: Truncate Sentence
+var truncateSentence = function (s, k) {
+    s = s.trim();
+    return s.split(' ').slice(0, k).join(' ');
+    console.log('>> truncateSentence("Hello how are you Contestant", 4)', truncateSentence("Hello how are you Contestant", 4));
 };
