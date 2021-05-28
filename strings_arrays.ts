@@ -230,3 +230,13 @@ var truncateSentence = function(s:string, k) {
     return s.split(' ').slice(0,k).join(' ');
     console.log('>> truncateSentence("Hello how are you Contestant", 4)',truncateSentence("Hello how are you Contestant", 4));
 };
+
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/thousand-separator/
+// question 7: Thousand Separator
+var thousandSeparator = function(n) {
+
+    return n.toLocaleString().replace(/,/g,'.');
+    thousandSeparator(12345678);
+};
+
