@@ -209,3 +209,10 @@ var sortSentence = function (s) {
     return Object.values(tracker).join(' ');
     console.log('>> ', sortSentence("is2 sentence4 This1 a3"));
 };
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+// question 11: Check If Two String Arrays are Equivalent
+var arrayStringsAreEqual = function (word1, word2) {
+    return word1.join('') === word2.join('');
+    console.log('>> arrayStringsAreEqual(["ab", "c"], ["a", "bc"])', arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
+};
