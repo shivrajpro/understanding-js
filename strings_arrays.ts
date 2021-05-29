@@ -271,4 +271,20 @@ var arrayStringsAreEqual = function(word1:string[], word2: string[]) {
 };
 
 
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+// question 12: Check if the Sentence Is Pangram
+var checkIfPangram = function(sentence:string) {
+    const tracker = {};
+
+    for (const c of sentence)
+        tracker[c] = tracker[c] ? tracker[c]++ : 1;
+    
+    const arr = Object.values(tracker);
+    return arr.length === 26 && arr.indexOf(0) === -1;
+    console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
+    console.log(checkIfPangram("leetcode"));
+};
+
+
 

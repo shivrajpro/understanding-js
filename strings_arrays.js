@@ -216,3 +216,17 @@ var arrayStringsAreEqual = function (word1, word2) {
     return word1.join('') === word2.join('');
     console.log('>> arrayStringsAreEqual(["ab", "c"], ["a", "bc"])', arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
 };
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+// question 12: Check if the Sentence Is Pangram
+var checkIfPangram = function (sentence) {
+    var tracker = {};
+    for (var _i = 0, sentence_1 = sentence; _i < sentence_1.length; _i++) {
+        var c = sentence_1[_i];
+        tracker[c] = tracker[c] ? tracker[c]++ : 1;
+    }
+    var arr = Object.values(tracker);
+    return arr.length === 26 && arr.indexOf(0) === -1;
+    console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
+    console.log(checkIfPangram("leetcode"));
+};
