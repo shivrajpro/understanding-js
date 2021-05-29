@@ -223,7 +223,7 @@ var average = function(salary:number[]) {
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/truncate-sentence/
-// question 7: Truncate Sentence
+// question 8: Truncate Sentence
 
 var truncateSentence = function(s:string, k) {
     s = s.trim();
@@ -233,10 +233,32 @@ var truncateSentence = function(s:string, k) {
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/thousand-separator/
-// question 7: Thousand Separator
+// question 9: Thousand Separator
 var thousandSeparator = function(n) {
-
+    
     return n.toLocaleString().replace(/,/g,'.');
     thousandSeparator(12345678);
+};
+
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/sorting-the-sentence/
+// question 10: Sorting the Sentence
+var sortSentence = function (s: string) {
+    s = "is2 sentence4 This1 a3";
+
+    const arr = s.split(' ');
+    const tracker = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        const k = element.slice(element.length - 1);
+        const v = element.slice(0, element.length - 1);
+        // console.log(k,v);
+        tracker[k] = v;
+    }
+    // console.log(tracker);
+    // console.log(Object.values(tracker).join(' '));
+    return Object.values(tracker).join(' ');
+    console.log('>> ',sortSentence("is2 sentence4 This1 a3"));
 };
 

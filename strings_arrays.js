@@ -177,7 +177,7 @@ var average = function (salary) {
 };
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/truncate-sentence/
-// question 7: Truncate Sentence
+// question 8: Truncate Sentence
 var truncateSentence = function (s, k) {
     s = s.trim();
     return s.split(' ').slice(0, k).join(' ');
@@ -185,8 +185,27 @@ var truncateSentence = function (s, k) {
 };
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/thousand-separator/
-// question 7: Thousand Separator
+// question 9: Thousand Separator
 var thousandSeparator = function (n) {
     return n.toLocaleString().replace(/,/g, '.');
     thousandSeparator(12345678);
+};
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/sorting-the-sentence/
+// question 10: Sorting the Sentence
+var sortSentence = function (s) {
+    s = "is2 sentence4 This1 a3";
+    var arr = s.split(' ');
+    var tracker = {};
+    for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        var k = element.slice(element.length - 1);
+        var v = element.slice(0, element.length - 1);
+        // console.log(k,v);
+        tracker[k] = v;
+    }
+    // console.log(tracker);
+    // console.log(Object.values(tracker).join(' '));
+    return Object.values(tracker).join(' ');
+    console.log('>> ', sortSentence("is2 sentence4 This1 a3"));
 };
