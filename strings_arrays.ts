@@ -112,19 +112,19 @@ var detectCapitalUse = function (word: string) {
 
     if (allLowerCase(word)) return true;
 
-    if(allCaps(word)) return true;
+    if (allCaps(word)) return true;
 
     for (let i = 1; i < word.length; i++) {
         // if 1st char is Capital and anyone of the other char is not capital return false
-        if(isCapital(word[i]))
+        if (isCapital(word[i]))
             return false;
     }
 
     if (isCapital(word[0])) return true;
-    
+
     return true;
-    console.log('>> allLowerCase("leetcode")',allLowerCase("leetcode"));
-    console.log('>> detectCapitalUse("USA")',detectCapitalUse("USA"));
+    console.log('>> allLowerCase("leetcode")', allLowerCase("leetcode"));
+    console.log('>> detectCapitalUse("USA")', detectCapitalUse("USA"));
     console.log('>> detectCapitalUse("FlaG")', detectCapitalUse("FlaG"));
     console.log('>> detectCapitalUse("Leetcode")', detectCapitalUse("Leetcode"));
     console.log('>> detectCapitalUse("ffffffffffffffffffffF")', detectCapitalUse("ffffffffffffffffffffF"));
@@ -149,7 +149,7 @@ function isCapital(c: string) {
     return (c.charCodeAt(0) >= 65 && c.charCodeAt(0) <= 91);
 }
 
-function allCaps(s:string) {
+function allCaps(s: string) {
     for (let i = 0; i < s.length; i++) {
         const asciiCode = s.charCodeAt(i);
 
@@ -161,44 +161,44 @@ function allCaps(s:string) {
 
     }
 
-    return true;    
+    return true;
 }
 
 
 // ==========X=================X=============================X===========================
 // question 5: https://leetcode.com/problems/length-of-last-word/
-var lengthOfLastWord = function(s:string) {
+var lengthOfLastWord = function (s: string) {
     const words = s.split(" ");
     let lastWord = words[words.length - 1];
-    
-    for (let i = words.length - 1; i >=0; i--)
-        if(words[i].length>0){
+
+    for (let i = words.length - 1; i >= 0; i--)
+        if (words[i].length > 0) {
             lastWord = words[i];
             break;
         }
 
     console.log('>> lastWord', lastWord);
-    
+
     return lastWord.length;
-    console.log('>> lengthOfLastWord',lengthOfLastWord("Hello World"));
-    console.log('>> lengthOfLastWord',lengthOfLastWord(" "));
-    console.log('>> lengthOfLastWord',lengthOfLastWord("a "));
-    console.log('>> lengthOfLastWord',lengthOfLastWord("Today is a nice day"));
+    console.log('>> lengthOfLastWord', lengthOfLastWord("Hello World"));
+    console.log('>> lengthOfLastWord', lengthOfLastWord(" "));
+    console.log('>> lengthOfLastWord', lengthOfLastWord("a "));
+    console.log('>> lengthOfLastWord', lengthOfLastWord("Today is a nice day"));
 };
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/add-binary/
 // question 6: Given two binary strings a and b, return their sum as a binary string
 
-var addBinary = function(a:string, b:string) {
+var addBinary = function (a: string, b: string) {
     const n1 = parseInt(a, 2);
     const n2 = parseInt(b, 2);
 
     const sum = n1 + n2;
 
 
-    console.log('>> addBinary("1010","1")',addBinary("11","1"));
-    console.log('>> addBinary("1010","1011")',addBinary("1010","1011"));
+    console.log('>> addBinary("1010","1")', addBinary("11", "1"));
+    console.log('>> addBinary("1010","1011")', addBinary("1010", "1011"));
 };
 
 
@@ -208,16 +208,16 @@ var addBinary = function(a:string, b:string) {
 // is the salary of the employee i.
 // Return the average salary of employees excluding the minimum and maximum salary.
 
-var average = function(salary:number[]) {
+var average = function (salary: number[]) {
     const min = Math.min.apply(null, salary);
     const max = Math.max.apply(null, salary);
 
-    const sum = salary.reduce((acc, val)=>acc + val);
+    const sum = salary.reduce((acc, val) => acc + val);
 
-    const result = (sum - min - max)/(salary.length-2);
-    console.log('>> min max sum',min,max,sum);
+    const result = (sum - min - max) / (salary.length - 2);
+    console.log('>> min max sum', min, max, sum);
     return result;
-    console.log('>> average',average([4000,3000,1000,2000]));
+    console.log('>> average', average([4000, 3000, 1000, 2000]));
 };
 
 
@@ -225,18 +225,18 @@ var average = function(salary:number[]) {
 // https://leetcode.com/problems/truncate-sentence/
 // question 8: Truncate Sentence
 
-var truncateSentence = function(s:string, k) {
+var truncateSentence = function (s: string, k) {
     s = s.trim();
-    return s.split(' ').slice(0,k).join(' ');
-    console.log('>> truncateSentence("Hello how are you Contestant", 4)',truncateSentence("Hello how are you Contestant", 4));
+    return s.split(' ').slice(0, k).join(' ');
+    console.log('>> truncateSentence("Hello how are you Contestant", 4)', truncateSentence("Hello how are you Contestant", 4));
 };
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/thousand-separator/
 // question 9: Thousand Separator
-var thousandSeparator = function(n) {
-    
-    return n.toLocaleString().replace(/,/g,'.');
+var thousandSeparator = function (n) {
+
+    return n.toLocaleString().replace(/,/g, '.');
     thousandSeparator(12345678);
 };
 
@@ -259,32 +259,55 @@ var sortSentence = function (s: string) {
     // console.log(tracker);
     // console.log(Object.values(tracker).join(' '));
     return Object.values(tracker).join(' ');
-    console.log('>> ',sortSentence("is2 sentence4 This1 a3"));
+    console.log('>> ', sortSentence("is2 sentence4 This1 a3"));
 };
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
 // question 11: Check If Two String Arrays are Equivalent
-var arrayStringsAreEqual = function(word1:string[], word2: string[]) {
+var arrayStringsAreEqual = function (word1: string[], word2: string[]) {
     return word1.join('') === word2.join('');
-    console.log('>> arrayStringsAreEqual(["ab", "c"], ["a", "bc"])',arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
+    console.log('>> arrayStringsAreEqual(["ab", "c"], ["a", "bc"])', arrayStringsAreEqual(["ab", "c"], ["a", "bc"]));
 };
 
 
 // ==========X=================X=============================X===========================
 // https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
 // question 12: Check if the Sentence Is Pangram
-var checkIfPangram = function(sentence:string) {
+var checkIfPangram = function (sentence: string) {
     const tracker = {};
 
     for (const c of sentence)
         tracker[c] = tracker[c] ? tracker[c]++ : 1;
-    
+
     const arr = Object.values(tracker);
     return arr.length === 26 && arr.indexOf(0) === -1;
     console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
     console.log(checkIfPangram("leetcode"));
 };
 
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+// question 13: Check if the Sentence Is Pangram
+var mergeAlternately = function (word1: string, word2: string) {
+    let result = '', i = 0;
 
+    const w1 = word1.split(''), w2 = word2.split('');
 
+    
+    while (w1.length > 0 && w2.length > 0) {
+        result += i % 2 === 0 ? w1.shift() : w2.shift();
+        i++;
+    }
+
+    while (w1.length > 0)
+        result += w1.shift();
+
+    while (w2.length > 0)
+        result += w2.shift();
+    // console.log(">> result", result);
+
+    return result;  
+    console.log('>> mergeAlternately("abc", "pqr")',mergeAlternately("abc","pqr"));
+    console.log('>> mergeAlternately("ab", "pqrs")',mergeAlternately("ab","pqrs"));
+};

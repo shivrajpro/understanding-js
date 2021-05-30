@@ -230,3 +230,22 @@ var checkIfPangram = function (sentence) {
     console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
     console.log(checkIfPangram("leetcode"));
 };
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+// question 13: Check if the Sentence Is Pangram
+var mergeAlternately = function (word1, word2) {
+    var result = '', i = 0;
+    var w1 = word1.split(''), w2 = word2.split('');
+    while (w1.length > 0 && w2.length > 0) {
+        result += i % 2 === 0 ? w1.shift() : w2.shift();
+        i++;
+    }
+    while (w1.length > 0)
+        result += w1.shift();
+    while (w2.length > 0)
+        result += w2.shift();
+    // console.log(">> result", result);
+    return result;
+    console.log('>> mergeAlternately("abc", "pqr")', mergeAlternately("abc", "pqr"));
+    console.log('>> mergeAlternately("ab", "pqrs")', mergeAlternately("ab", "pqrs"));
+};
