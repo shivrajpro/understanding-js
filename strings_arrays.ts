@@ -294,7 +294,7 @@ var mergeAlternately = function (word1: string, word2: string) {
 
     const w1 = word1.split(''), w2 = word2.split('');
 
-    
+
     while (w1.length > 0 && w2.length > 0) {
         result += i % 2 === 0 ? w1.shift() : w2.shift();
         i++;
@@ -307,7 +307,34 @@ var mergeAlternately = function (word1: string, word2: string) {
         result += w2.shift();
     // console.log(">> result", result);
 
-    return result;  
-    console.log('>> mergeAlternately("abc", "pqr")',mergeAlternately("abc","pqr"));
-    console.log('>> mergeAlternately("ab", "pqrs")',mergeAlternately("ab","pqrs"));
+    return result;
+    console.log('>> mergeAlternately("abc", "pqr")', mergeAlternately("abc", "pqr"));
+    console.log('>> mergeAlternately("ab", "pqrs")', mergeAlternately("ab", "pqrs"));
 };
+
+
+// ==========X=================X=============================X===========================
+// https://leetcode.com/problems/count-the-number-of-consistent-strings/
+// question 14: Count the Number of Consistent Strings
+
+var countConsistentStrings = function (allowed: string, words: string[]) {
+    let counter = 0;
+    for (let i = 0; i < words.length; i++) {
+        const w = words[i];
+        let isConsistent = true;
+
+        for (const c of w) {
+            if (allowed.indexOf(c) === -1)
+                isConsistent = false;
+        }
+
+        if(isConsistent) counter++;
+    }
+
+    console.log('>> counter',counter);
+    return counter;
+    countConsistentStrings("ab",["ad","bd","aaab","baa","badab"]);//2
+    countConsistentStrings("abc",["a","b","c","ab","ac","bc","abc"]);//7
+    countConsistentStrings("cad",["cc","acd","b","ba","bac","bad","ac","d"]);//4
+};
+
