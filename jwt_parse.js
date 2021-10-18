@@ -1,4 +1,4 @@
-const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJBRE1JTixQUkFDVElUSU9ORVIiLCJleHAiOjE2MzAzODg2NDF9.xRYZxZpZRmA3jek_1Qs-bXNH181zf2q715M6AFJW4rqdvbMIOkAcemQ-WmSR3ogaGCEwxlx7bbA4rqQKlQeGwQ";
+const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJBRE1JTixQUkFDVElUSU9ORVIiLCJleHAiOjE2MzA0Nzk0Mzd9.7HVZ45yaEpUgY40HcUgQeS5-uyV0nqMWncS8aquc3avcQ7HT_rzKYvYiw0AgVLcUK84YP2ztTy6SkCJHMq26Eg";
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -11,3 +11,6 @@ function parseJwt (token) {
 
 const parsedVal = parseJwt(token);
 console.log('>> parsedVal',parsedVal);
+setTimeout(() => {
+    console.log('>> after 10 seconds parsedVal',parsedVal);
+}, 10*1000);

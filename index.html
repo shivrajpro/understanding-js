@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Practice</title>
-    
-    <style>
 
-        ul{
+    <style>
+        ul {
             cursor: pointer;
         }
 
-        #gParent, #parent, #child{
+        #gParent,
+        #parent,
+        #child {
             min-width: 50px;
             min-height: 50px;
             border: 1px solid red;
             padding: 40px;
         }
+
+        .fallback {
+            background-image: url('https://static.thenounproject.com/png/643663-200.png');
+            display: inline-block;
+            /*to ensure it wraps correctly around the image, even if it is a a or span tag*/
+            /*
+            min-width: specify a minimum width (could be the width of the fallback image) px;
+            min-height: specify a minimum height (could be the height of the fallback image) px;
+            */
+            min-width: 40px;
+            min-height: 40px;
+            background-position: center center;
+            /* fallback for older browsers*/
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .cc_image {
+            /*min-width: same as container px;*/
+            min-width: 40px;
+            min-height: 40px;
+            background-position: center center;
+            /* fallback for older browsers*/
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
+
 <body>
     <h1>Lorem ipsum dolor sit amet.</h1>
     <button id="deb">Debounce</button>
@@ -42,6 +71,11 @@
         <br>
         <!-- <input type="text" name="lastaname" id="lastName" placeholder="Last Name"> -->
     </form>
+    <!-- image
+    <div class="cc_image_container fallback">
+        <img class="cc_image" alt="file"  onerror=this.src="https://static.thenounproject.com/png/643663-200.png" src="https://patientfilethumbnail.s3.ap-southeast-2.amazonaws.com/eps%20sample1634106320137.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20211013T115503Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=AKIA4L27K4CWP2A2Y3FF%2F20211013%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Signature=b1d5f4e6ba40051e7d69166d8de29884cabb62b20e88988b4e49d3928f9b527d" />
+    </div> -->
+    <!-- <img src="https://patientfilethumbnail.s3.ap-southeast-2.amazonaws.com/eps%20sample1634106320137.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20211013T115503Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=AKIA4L27K4CWP2A2Y3FF%2F20211013%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Signature=b1d5f4e6ba40051e7d69166d8de29884cabb62b20e88988b4e49d3928f9b527d" alt=""> -->
     <!-- <script src="/app.js"></script> -->
     <!-- <script src="/problems.js"></script> -->
     <!-- <script src="/leetcode.js"></script> -->
@@ -55,6 +89,9 @@
     <!-- <script src="/strings_arrays.js"></script> -->
     <!-- <script src="/promises.js"></script> -->
     <!-- <script src="/design_patterns.js"></script> -->
-    <script src="/jwt_parse.js"></script>
+    <!-- <script src="/jwt_parse.js"></script> -->
+    <!-- <script src="file_manager.js"></script> -->
+    <script src="files_rename.js"></script>
 </body>
+
 </html>
