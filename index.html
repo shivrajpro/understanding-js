@@ -5,16 +5,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>    
+    <title>JS Practice</title>
+
+    <style>
+        ul {
+            cursor: pointer;
+        }
+
+        #gParent,
+        #parent,
+        #child {
+            min-width: 50px;
+            min-height: 50px;
+            border: 1px solid red;
+            padding: 40px;
+        }
+
+        .fallback {
+            background-image: url('https://static.thenounproject.com/png/643663-200.png');
+            display: inline-block;
+            /*to ensure it wraps correctly around the image, even if it is a a or span tag*/
+            /*
+            min-width: specify a minimum width (could be the width of the fallback image) px;
+            min-height: specify a minimum height (could be the height of the fallback image) px;
+            */
+            min-width: 40px;
+            min-height: 40px;
+            background-position: center center;
+            /* fallback for older browsers*/
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .cc_image {
+            /*min-width: same as container px;*/
+            min-width: 40px;
+            min-height: 40px;
+            background-position: center center;
+            /* fallback for older browsers*/
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .img-container{
+            border: 1px solid red;
+            height: 400px;
+            width: 400px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: center center;            
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <textarea id="txtArea" cols="30" rows="10">Hello World</textarea> -->
-    <!-- <button id="btn1" >select world</button> -->
-    <!-- <script src="/app.js"></script> -->
-    <script src="/empirix.js"></script>
+    <!-- <div>
+        image goes here
+        <div id="cfImg" class="img-container">
+
+        </div>
+    </div> -->
+    <h1>test some js</h1>
+    <script src="/STL_files.js"></script>
 </body>
 
 </html>
