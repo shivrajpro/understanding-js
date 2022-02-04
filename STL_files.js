@@ -70,12 +70,14 @@ getScanTypesList();
 function getScanTypesList() {
     const scanTypesList = [];
     for (const fileId in uploadedFiles.box_metadata) {
-        // console.log("qq fileId",fileId);
         const fileObj = uploadedFiles.box_metadata[fileId];
-        fileObj.id = fileId;
-        // console.log("qq fileObj",fileObj);
         fileObj.scanType = getScanType(fileObj);
-        scanTypesList.push(fileObj);
+        const payloadObj = {
+            isStarred: false, 
+            itemId: fileId, 
+            scanType: getScanType(fileObj)
+        };
+        scanTypesList.push(payloadObj);
     }
     console.log("qq result", scanTypesList);
 }
