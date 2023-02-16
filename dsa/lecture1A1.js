@@ -1,3 +1,26 @@
+console.log("===============================");
+
+// Problem 5 -
+// You are given an integer A. You have to tell whether it is a perfect number or not.
+// Perfect number is a positive integer which is equal to the sum of its proper 
+// positive divisors.
+
+// A proper divisor of a natural number is the divisor that is strictly less 
+// than the number
+function isPerfect(A) {
+  let sum = 0;
+  for (let i = 1; i <= A/2; i++) {
+    if (A % i === 0)  sum += i;
+  }
+  return sum === A ? 1 : 0;
+}
+
+console.log("4==>", isPerfect(4));
+console.log("6==>", isPerfect(6));
+console.log("===============================");
+
+throw new Error();
+
 // Problem 4 - You will be given an integer n. 
 // You need to return the count of prime numbers less than or equal to n.
 // https://www.scaler.com/academy/mentee-dashboard/class/59862/homework/problems/6779?navref=cl_tt_lst_nm
@@ -16,7 +39,7 @@ console.log("===============================");
 //Problem 1 -  find the factors of a given number
 function getNumberOfFactors(A) {
   let count = 0;
-  for (let i = 1; i * i <= A; i++) {
+  for (let i = 1; i * i <= A; i++) { //run the loop till root of A only
     if (A % i === 0) {
       if (i === A / i) count += 1;
       else count += 2;
