@@ -1,0 +1,33 @@
+.payment-info {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 500px;
+  width: 400px;
+}
+.payment-status {
+  height: 200px;
+  text-align: center;
+
+  /* width: 400px; */
+  /* border: 1px solid green; */
+}
+.fa {
+  color: green;
+}
+.payment-details {
+  /* border: 1px solid blue; */
+  height: 250px;
+  margin: 10px;
+  /* width: 400px; */
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+p {
+  margin: 4px;
+}
+.amount-paid {
+  margin: 10px 0;
+  font-weight: bold;
+}
