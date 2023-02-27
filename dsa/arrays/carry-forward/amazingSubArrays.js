@@ -12,7 +12,7 @@
 //     Amazing substrings of given string are : A, AB, ABE, ABEC, E, EC
 //     here number of substrings are 6 and 6 % 10003 = 6.
 
-// MY APPROACH - giving wrong answer
+// MY APPROACH - giving TLE
 function getAmazingSubArr(A) {
   const VOWELS = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 
@@ -23,6 +23,7 @@ function getAmazingSubArr(A) {
     if (VOWELS.indexOf(c) !== -1) {
       for (let j = i + 1; j <= A.length; j++) {
         count++;
+        // console.log(A.substring(i, j),'i=',i,'j=',j);
         substrings.push(A.substring(i, j));
       }
     }
@@ -31,14 +32,22 @@ function getAmazingSubArr(A) {
   return count % 10003;
 }
 
-console.log(getAmazingSubArr("ABEC"));
-console.log(getAmazingSubArr("BEC"));
-console.log(getAmazingSubArr("amazing"));
-// console.log(
-//   getAmazingSubArr(
-//     "pGpEusuCSWEaPOJmamlFAnIBgAJGtcJaMPFTLfUfkQKXeymydQsdWCTyEFjFgbSmknAmKYFHopWceEyCSumTyAFwhrLqQXbWnXSn"
-//   )
-// );
+function sol2(A) {
+    const VOWELS = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    let count = 0;
+
+    for (let i = 0; i < A.length; i++) 
+      if (VOWELS.indexOf(A[i]) !== -1) count+=A.length - i;
+    return count % 10003;    
+}
+console.log(sol2("ABEC"));
+console.log(sol2("BEC"));
+console.log(sol2("amazing"));
+console.log(
+  sol2(
+    "pGpEusuCSWEaPOJmamlFAnIBgAJGtcJaMPFTLfUfkQKXeymydQsdWCTyEFjFgbSmknAmKYFHopWceEyCSumTyAFwhrLqQXbWnXSn"
+  )
+);
 
 // chatGPT solution
 function getAmazSubArr(A) {
@@ -48,7 +57,7 @@ function getAmazSubArr(A) {
   for (let i = 0; i < A.length; i++) {
     if (vowels.has(A[i])) {
       for (let j = i + 1; j <= A.length; j++) {
-        // console.log(S.substring(i, j),'i=',i,'j=',j);
+        // console.log(A.substring(i, j),'i=',i,'j=',j);
         amazingSubstrings.push(A.substr(i, j)); //index j is excluded for substr
       }
     }
