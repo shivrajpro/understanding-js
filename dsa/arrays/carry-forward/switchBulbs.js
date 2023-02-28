@@ -1,9 +1,18 @@
+// A wire connects N light bulbs.
+// Each bulb has a switch associated with it; however, due to faulty wiring, 
+// a switch also changes the state of all the bulbs to the right of the current bulb.
+// Given an initial state of all bulbs, find the minimum number of switches you have 
+// to press to turn on all the bulbs.
+// You can press the same switch multiple times.
+// Note: 0 represents the bulb is off and 1 represents the bulb is on.
+
+
+// my solution: throws TLE as its O(N^2)
 function switchPressed(A, fromIndex) {
   for (let i = fromIndex; i < A.length; i++) A[i] = A[i] === 0 ? 1 : 0;
   console.log(A);
   return A;
 }
-// my solution: throws TLE as its O(N^2)
 function turnOnBulbs(A) {
   let count = 0;
 
@@ -17,6 +26,7 @@ function turnOnBulbs(A) {
   return count;
 }
 
+// TAs solution: O(n)
 function sol1(A) {
   let count = 0;//1,2,3,4
 
