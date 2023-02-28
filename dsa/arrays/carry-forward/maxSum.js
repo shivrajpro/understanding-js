@@ -63,17 +63,18 @@ function getMaxSum(A, B) {
   const prefixSum = [A[0]];
   for (let i = 1; i < A.length; i++) prefixSum[i] = prefixSum[i - 1] + A[i];
 
-  const N = A.length; //5
-  let j = N - B; //3
+  const N = A.length; //2
+  let j = N - B; //1,2
   let answer = Math.max(
     prefixSum[B - 1], //sum of first B elements
     // the code failed for B === N
     prefixSum[N - 1] - (B === N ? 0 : prefixSum[N - B - 1]) //sum of last B elements
   );
 
-  for (let i = 0; i < B && j < N; i++) {
-    const left = prefixSum[i];
-    const right = prefixSum[N - 1] - prefixSum[j];
+  for (let i 
+    = 0; i < B && j < N; i++) {
+    const left = prefixSum[i];//1
+    const right = prefixSum[N - 1] - prefixSum[j];//3-1,2
     j++;
     answer = Math.max(answer, left + right);
   }
