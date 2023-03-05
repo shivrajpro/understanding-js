@@ -9,7 +9,7 @@
     sum of all the elements of the subarray must be greater than B.
     Your task is to find the count of good subarrays in A.
  */
-function numOfGoodSubArr(A, B) {
+function sol1(A, B) {
   // approach
   let count = 0;
 
@@ -36,7 +36,7 @@ function numOfGoodSubArr(A, B) {
   return count;
 }
 
-function sol1(A, B) {
+function countGoodSubArrays(A, B) {
   let count = 0;
   const n = A.length;
   const pf = [A[0]];
@@ -67,5 +67,5 @@ function sol1(A, B) {
   return count;
 }
 
-console.log(sol1([1, 2, 3, 4, 5], 4));
-console.log(sol1([13, 16, 16, 15, 9, 16, 2, 7, 6, 17, 3, 9], 65));
+console.log(countGoodSubArrays([1, 2, 3, 4, 5], 4));
+console.log(countGoodSubArrays([13, 16, 16, 15, 9, 16, 2, 7, 6, 17, 3, 9], 65));
