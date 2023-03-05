@@ -21,19 +21,6 @@ function sumAllSubArr(A) {
   return totalSum;
 }
 
-function sol1(A) {
-  const n = A.length;
-  const sumArr = [];
-  for (let s = 0; s < A.length; s++) {
-    let sum = 0;
-    for (let e = s; e < A.length; e++) {
-      sum += A[e];
-    }
-    sumArr.push(sum);
-  }
-  console.log("SUM=", sumArr);
-}
-
 console.log(subArrSum([1, 2, 3]));
 console.log(subArrSum([2, 1, 3]));
 console.log(subArrSum([4, 2, -1, 3]));
@@ -61,13 +48,6 @@ function subArrSum(A) {
       totalSum += Number(sum);
     }
   }
-
-  //   let total = 0;
-  //   for (let i = 0; i < A.length; i++) {
-  //     total += (i + 1) * (A.length - 1) * A[i];
-  //   }
-
-  //   console.log(total);
 
   return totalSum;
 }
