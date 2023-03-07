@@ -6,8 +6,8 @@ function addMatrices(A, B) {
 
   const result = new Array(col).fill(0).map(() => new Array(row).fill(0));
 
-  console.log('result',result);
-  return result;
+  // console.log('result',result);
+  
   for (let i = 0; i < row; i++) {
     for (let j = 0; j < col; j++) {
       result[i][j] = A[i][j] + B[i][j];
