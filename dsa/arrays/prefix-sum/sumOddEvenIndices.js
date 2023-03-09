@@ -12,6 +12,7 @@ The subarray for the first query is [1, 2, 3] whose sum of even indices is 4.
 The subarray for the second query is [2, 3, 4, 5] whose sum of even indices is 8.
 */
 
+//Directi interview question
 function getEvenSum(A, B) {
   const n = B.length;
   const pfSum = [A[0]];
