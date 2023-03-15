@@ -18,4 +18,11 @@ function xorSum(A, B) {
 
 // console.log(xorSum(6, 12));
 // console.log(xorSum(4, 9));
-console.log(xorSum(1, 2));
+// console.log(xorSum(1, 2));
+
+function sol1(A,B) {
+  let C = A & B;
+  return (A^C) + (B^C);
+}
+console.log(sol1(6, 12));
+console.log(sol1(4, 9));

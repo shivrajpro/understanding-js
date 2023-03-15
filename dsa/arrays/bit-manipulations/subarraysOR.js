@@ -45,7 +45,6 @@ function sol2(A, B) {
   return count;
 }
 
-
 function sol3(A,B) {
     const pfOr = [B[0]];
     for (let i = 1; i < B.length; i++) {
@@ -53,5 +52,18 @@ function sol3(A,B) {
     }
     console.log(pfOr);
 }
-console.log(sol3(3, [1, 0, 1])); //5 => [1],[1,0],[0,1],[1],[0,1],[1,0,1]
-console.log(sol3(2, [1, 0])); //2
+// console.log(sol3(3, [1, 0, 1])); //5 => [1],[1,0],[0,1],[1],[0,1],[1,0,1]
+// console.log(sol3(2, [1, 0])); //2
+
+function sol4(A, B) {
+  let total = 0;
+  let count = 0;
+  for (let i = 0; i < A; i++) {
+    if (B[i] == 1) count = i + 1;
+    // else count = 0;
+    total += count;
+  }
+  return total;
+}
+console.log(sol4(3, [1, 0, 1])); //5 => [1],[1,0],[0,1],[1],[0,1],[1,0,1]
+console.log(sol4(2, [1, 0])); //2
