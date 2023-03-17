@@ -27,7 +27,9 @@ function binaryToDecimal(A) {
 }
 
 function unsetBits(A, B) {
-  return A & ~((1 << B) - 1);
+  A = A >> B; //This will loose B bits at the right
+  A = A << B; //This will add B 0's at the right
+  return A;
   console.log("B=", B);
   let binary = decimalToBinary(A).split("");
   console.log("b=", binary);
@@ -45,8 +47,8 @@ function unsetBits(A, B) {
   return decimal;
 }
 
-// console.log(unsetBits(25, 3)); //24
-// console.log(unsetBits(37, 3)); //32
-// console.log(unsetBits(93, 4)); //80
+console.log(unsetBits(25, 3)); //24
+console.log(unsetBits(37, 3)); //32
+console.log(unsetBits(93, 4)); //80
 console.log(unsetBits(15, 2)); //12
-// console.log(unsetBits(915314, 7)); //915200
+console.log(unsetBits(915314, 7)); //915200
