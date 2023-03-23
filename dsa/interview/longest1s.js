@@ -59,7 +59,7 @@ function getLen(A) {
   return max;
 }
 
-console.log(getLen("111000"));
-console.log(getLen("1111111111111"));
-console.log(getLen("111011101"));
-console.log(getLen("11010110000000000"));
+// console.log(getLen("111000"));
+// console.log(getLen("1111111111111"));
+// console.log(getLen("111011101"));
+// console.log(getLen("11010110000000000"));
