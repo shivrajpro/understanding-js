@@ -13,7 +13,7 @@ function getNumOfFactors(A) {
 
 // console.log(getNumOfFactors(48));
 
-function facorsSort(A) {
+function factorsSort(A) {
   A = A.sort((a, b) => {
     let countA = getNumOfFactors(a);
     let countB = getNumOfFactors(b);
@@ -25,6 +25,6 @@ function facorsSort(A) {
   return A;
 }
 
-console.log(facorsSort([6, 8, 9]));
-console.log(facorsSort([2, 4, 7]));
-console.log(facorsSort([36, 13, 13, 26, 37, 28, 27, 43, 7]));
+console.log(factorsSort([6, 8, 9]));
+console.log(factorsSort([2, 4, 7]));
+console.log(factorsSort([36, 13, 13, 26, 37, 28, 27, 43, 7]));
