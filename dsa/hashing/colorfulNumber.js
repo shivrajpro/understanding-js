@@ -7,7 +7,7 @@ function isColorfulNum(A) {
   for (let i = 0; i < str.length; i++) {
     let product = 1;
     for (let j = i; j < str.length; j++) {
-        product = product * (str[j] - 0);
+        product = product * +str[j];
         if(set.has(product)) return 0;
         set.add(product);
     }
