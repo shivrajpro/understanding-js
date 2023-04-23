@@ -30,5 +30,7 @@ function getLongestPalindrome(A) {
   }
 
   // Return the longest palindromic substring
-  return A.slice(start, start + maxLength);
+  return A.slice(start, start + maxLength).length;
 }
+
+console.log(getLongestPalindrome("banana"));
