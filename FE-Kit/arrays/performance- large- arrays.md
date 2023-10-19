@@ -5,10 +5,11 @@
 - These wonderful performance results are not shared across browsers, especially *cough* IE.
 
 # Fast
+//Object equivalent means manipulating an object
 - Array push / pop / shift > Object equivalent [20x]
 - shift < pop [6x]
 - shift > Object equivalent [100x]
-- arr.push > arr[index] [10x - 20x]
+- arr.push > arr[index] [10x - 20x] // push is faster
 - arr.unshift() < new prop adding [5x]
 - Nulling array value > deleting it [4x]
 - Nulling obj value < deleting it [2x]

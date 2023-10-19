@@ -11,7 +11,7 @@ const fruits = ["apple", "banana", "orange", "grape", "mango"];
 
 const fruitsLengthLessThan5 = (fruit, index, array) => {
 
-  fruits.push("watermelon") // will NOT be affected
+  fruits.push("watermelon") // end result will NOT be affected
   fruits.pop() // will be affected
   fruits[1] = "nut" // will be affected
 
