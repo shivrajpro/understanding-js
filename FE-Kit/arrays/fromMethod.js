@@ -1,5 +1,5 @@
 const fruits = ["apple", "banana", "orange"];
-const newFruits = Array.from(fruits);
+const newFruits = Array.from(fruits); //creates deep copy
 const fruits2 = newFruits;
 
 newFruits.push("pears");
