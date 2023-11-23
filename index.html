@@ -8,11 +8,26 @@
     <!-- <script src="./namasteJS/map-filter-reduce.js"></script> -->
     <!-- <script src="./namasteJS/call-apply-bind.js"></script> -->
     <!-- <script src="./namasteJS/currying.js"></script> -->
-    <script defer src="./namasteJS/debounce-and-throttle.js"></script>
+    <!-- <script defer src="./namasteJS/debounce-and-throttle.js"></script> -->
+    <script defer src="./namasteJS/event-bubbling-capturing.js"></script>
+
+    <style>
+      div {
+        min-width: 100px;
+        min-height: 100px;
+        padding: 30px;
+        border: 1px solid red;
+      }
+    </style>
   </head>
   <body>
     <h1>test some js</h1>
-    <button id="debounceBtn">Debounce</button>
-    <button id="throttleBtn">Throttle</button>
+    <div id="grandParent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+    <!-- <button id="debounceBtn">Debounce</button>
+    <button id="throttleBtn">Throttle</button> -->
   </body>
 </html>
