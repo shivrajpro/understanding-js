@@ -9,7 +9,8 @@
     <!-- <script src="./namasteJS/call-apply-bind.js"></script> -->
     <!-- <script src="./namasteJS/currying.js"></script> -->
     <!-- <script defer src="./namasteJS/debounce-and-throttle.js"></script> -->
-    <script defer src="./namasteJS/event-bubbling-capturing.js"></script>
+    <!-- <script defer src="./namasteJS/event-bubbling-capturing.js"></script> -->
+    <script defer src="./namasteJS/event-delegation.js"></script>
 
     <style>
       div {
@@ -22,11 +23,23 @@
   </head>
   <body>
     <h1>test some js</h1>
-    <div id="grandParent">
+
+    <ul id="category">
+      <li id="laptops">Laptops</li>
+      <li id="cameras">Cameras</li>
+      <li id="shoes">Shoes</li>
+    </ul>
+    
+    <div id="form">
+      <input type="text" data-uppercase="capital" >
+      <input type="text">
+      <input type="text"></div>
+    <!-- EVENT BUBBLING AND CAPTURING -->
+    <!-- <div id="grandParent">
       <div id="parent">
         <div id="child"></div>
       </div>
-    </div>
+    </div> -->
     <!-- <button id="debounceBtn">Debounce</button>
     <button id="throttleBtn">Throttle</button> -->
   </body>
