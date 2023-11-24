@@ -1,5 +1,5 @@
 // DEBOUNCING
-// use case: search bar and autocomplete
+// use case: search bar, place order button click and autocomplete
 const debounce = function (fn, delay) {
   let timeoutId;
   return function (...args) {
