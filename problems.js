@@ -98,7 +98,7 @@ function isAnagram(str1, str2) {
 // console.log(isAnagram("arc", "car"));
 
 
-//7. reverse words
+//7. reverse string
 function reverseString(str) {
 
     return str.split("").reverse().join("");
