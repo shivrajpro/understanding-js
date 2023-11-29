@@ -101,17 +101,7 @@ const difference = a.filter(e=>b.indexOf(e) === -1);
 // console.log(difference);
 
 //11. flattening the array
-function flattenArray(
-  arr = [
-    1,
-    2,
-    [4, 5, 6],
-    [
-      [3, 4],
-      [7, 8],
-    ],
-  ]
-) {
+function flattenArray(arr = [1, 2, [4, 5, 6], [[3, 4], [7, 8]]]) {
   const result = [];
   arr.forEach((a) => {
     if (Array.isArray(a)) return result.push(...flattenArray(a));

@@ -3,7 +3,7 @@
 // console.log('>> reverseVowels("leetcode")', reverseVowels("leetcode"));
 
 function reverseVowels(inputStr) {
-    let result = "", onlyVowels = [];
+    let result = "", onlyVowels:any = [];
     console.log('>> inputStr', inputStr);
 
     // first store all the vowels from input string in a new string;
