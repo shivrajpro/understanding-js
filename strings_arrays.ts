@@ -208,13 +208,13 @@ var addBinary = function (a: string, b: string) {
 // is the salary of the employee i.
 // Return the average salary of employees excluding the minimum and maximum salary.
 
-var average = function (salary: number[]) {
-    const min = Math.min.apply(null, salary);
-    const max = Math.max.apply(null, salary);
+var average = function (salaries: number[]) {
+    const min = Math.min.apply(null, salaries);
+    const max = Math.max.apply(null, salaries);
 
-    const sum = salary.reduce((acc, val) => acc + val);
+    const sum = salaries.reduce((acc, val) => acc + val,0);
 
-    const result = (sum - min - max) / (salary.length - 2);
+    const result = (sum - min - max) / (salaries.length - 2);
     console.log('>> min max sum', min, max, sum);
     return result;
     console.log('>> average', average([4000, 3000, 1000, 2000]));
