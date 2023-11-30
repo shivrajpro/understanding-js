@@ -142,3 +142,45 @@ function getSortedSentence(str = "is2 sentence4 This1 a3") {
 }
 const gSS = getSortedSentence;
 // console.log(gSS("Myself2 Me1 I4 and3")); console.log(gSS("is2 sentence4 This1 a3"));
+
+// 8. check if sentence is Pangram. 'A quick brown fox jumps over the lazy dog'->true
+function isPangram(sentence = "A quick brown fox jumps over the lazy dog") {
+    const alphabets = new Set(sentence.split(" ").join("").toLowerCase());
+    return alphabets.size === 26;
+    //  console.log(alphabets);
+}
+const ip = isPangram;
+// console.log(ip());
+// console.log(ip("test")); 
+
+// 9. Count the Number of Consistent Strings
+/*
+Example 1:
+Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+Output: 2
+Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+
+Example 2:
+Input: allowed = "abc", words = ["a","b","c","ab","ac","bc","abc"]
+Output: 7
+Explanation: All strings are consistent.
+*/
+function getCountOfConsistentStrings(allowed = "ab", words = ["aab", "bd"]) {
+    let count = 0;
+    for (let i = 0; i < words.length; i++) {
+        if (isConsistent(allowed, words[i])) count++;
+    }
+    // console.log(count);
+    return count;
+}
+
+function isConsistent(allowed = "ab", word = "bd") {
+    for (const c of word) {
+        if (allowed.indexOf(c) === -1) return false;
+    }
+    return true;
+}
+
+const ccs = getCountOfConsistentStrings;
+console.log(ccs("ab", ["ad","bd","aaab","baa","badab"])); //2
+console.log(ccs("abc", ["a","b","c","ab","ac","bc","abc"])); //7
