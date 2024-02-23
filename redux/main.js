@@ -28,7 +28,8 @@ function counterReducer(state = initialState, action) {
     return state;
 }
 
-const store = Redux.createStore(counterReducer);
+const enhancers = Redux.compose(newState, newDispatch)
+const store = Redux.createStore(counterReducer, initialState, enhancers);
 
 renderState();
 store.subscribe(renderState);
@@ -48,3 +49,34 @@ document.getElementById('decrement').addEventListener('click', function () {
     store.dispatch(decrement());
     // renderState();
 })
+
+
+function newDispatch(createStore) {
+    return function (reducer, preloadedState, enhancers) {
+        let store = createStore(reducer, preloadedState, enhancers);
+
+        function newDispatch(action) {
+            const result = store.dispatch(action);
+            console.log('Hello world, Perform logging'); //purpose of enhancers
+            return result;
+        }
+        return { ...store, dispatch: newDispatch }
+    }
+}
+
+function newState(createStore) {
+    return function (reducer, preloadedState, enhancers) {
+
+        let store = createStore(reducer, preloadedState, enhancers);
+
+        function newState() {
+            const state = store.getState();
+            return {
+                ...state,
+                msg: "hello world"
+            }
+        }
+
+        return { ...store, getState: newState }
+    }
+}
