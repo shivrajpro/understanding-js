@@ -1,0 +1,13 @@
+Variables in JavaScript
+Functions and Arrow Functions
+Objects in JavaScript
+Destructuring
+Array Methods
+Rest and Spread Operators
+Callback Functions
+Promises
+Async / Await in JavaScript
+OOPs in JavaScript
+this keyword
+
+https://www.geeksforgeeks.org/top-javascript-concepts-to-know-before-learning-react/
