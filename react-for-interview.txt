@@ -1,0 +1,10 @@
+features and advantages of react
+virutal DOM
+functional vs class components
+props
+state
+hooks
+lifecycle hooks
+shouldComponentUpdate usage
+redux basic
+controlled(state) vs uncontrolled components(refs)
