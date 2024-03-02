@@ -1,10 +1,51 @@
 features and advantages of react
+    1. use of virutal dom to improve efficiency
+    2. reusable components
+    3. gentle learning curve
+    4. huge ecosystem of libraries to choose from
+
 virutal DOM
+    virtual DOM is a concept where a virtual representation
+    of the real DOM is kept inside the memory and is synced with the real DOM by a
+    library such as ReactDOM.    
+    whenever there is a change in state variable, react updates only that div or that DOM
+    in which the state variable is present. example of datestring
+
 functional vs class components
+    declaration
+    handling of props
+    handling of state
+
 props
+    inputs to a component of React
 state
-hooks
-lifecycle hooks
-shouldComponentUpdate usage
-redux basic
+    Every component in react has a built-in state object, which contains all the
+    property values that belong to that component
+
 controlled(state) vs uncontrolled components(refs)
+    different approaches to handling
+    input from elements in react.    
+ 
+    In a controlled component, the value of the input
+    element is controlled by React.
+
+    In uncontrolled components the value of the input
+    element is handled by the DOM itself.
+    To access the value of the input element, we can use ref
+
+hooks
+    React Hooks are the built-in functions that permit developers for using the state and
+    lifecycle methods within React components. These are newly added features made
+    available in React 16.8 version. Each lifecycle of a component is having 3 phases
+    which include mount, unmount, and update.
+video
+
+useEffect hook - video and assignments
+
+lifecycle hooks - video and assignments
+
+custom hooks -video
+
+context API - video
+
+redux basic - redux chart on official page, saved post in linkedin
