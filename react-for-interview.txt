@@ -38,6 +38,7 @@ hooks
     lifecycle methods within React components. These are newly added features made
     available in React 16.8 version. Each lifecycle of a component is having 3 phases
     which include mount, unmount, and update.
+    useState, useEffect, useContext, useReducer, useRef
 video
 
 useEffect hook - video and assignments
@@ -48,4 +49,6 @@ custom hooks -video
 
 context API - video
 
-redux basic - redux chart on official page, saved post in linkedin
+useMemo and memoization - video
+
+redux basic - redux chart on official page;  //, saved post in linkedin
