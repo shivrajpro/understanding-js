@@ -1,0 +1,5 @@
+
+CSS
+Use https://bennettfeely.com/clippy/ for generating clip-path
+For generating random images https://source.unsplash.com/
+For icons ==> Material Icons by google

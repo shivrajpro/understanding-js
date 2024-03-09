@@ -34,8 +34,8 @@ controlled(state) vs uncontrolled components(refs)
     To access the value of the input element, we can use ref
 
 hooks
-    React Hooks are the built-in functions that permit developers for using the state and
-    lifecycle methods within React components. These are newly added features made
+    React Hooks are the built-in functions that permit developers for using the state 
+    and lifecycle methods within React components. These are newly added features made
     available in React 16.8 version. Each lifecycle of a component is having 3 phases
     which include mount, unmount, and update.
     useState, useEffect, useContext, useReducer, useRef
