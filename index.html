@@ -9,9 +9,43 @@
   <h1>test some js</h1>
   <button id="debounceBtn">debounce</button>
   <button id="throttleBtn">throttle</button>
+
+  <button id="openModal">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Hello!</h2>
+      <p>This is a simple modal.</p>
+    </div>
+  </div>
   <!-- <script src="./namasteJS/debounce-and-throttle-test.js"></script> -->
   <!-- <script async src="./namasteJS/debounce-and-throttle.js"></script> -->
   <script src="./index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    const modal = document.getElementById("myModal");
+    const btn = document.getElementById("openModal");
+    const span = document.querySelector(".close");
+
+    // Open modal
+    btn.onclick = () => {
+      modal.style.display = "flex";
+    }
+
+    // Close modal on "x"
+    span.onclick = () => {
+      modal.style.display = "none";
+    }
+
+    // Close modal on outside click
+    window.onclick = (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>
