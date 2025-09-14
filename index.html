@@ -6,46 +6,52 @@
 </head>
 
 <body>
-  <h1>test some js</h1>
-  <button id="debounceBtn">debounce</button>
-  <button id="throttleBtn">throttle</button>
+  <div id="app">
+    <header class="employee-header">
+      <h2>Employee Database Management</h2>
+      <div>
+        <button id="addEmployeeBtn" class="add-btn">Add Employee</button>
+      </div>
+    </header>
+    <main class="employees-container">
+      <div class="employee-list"></div>
+      <div class="employee-detail"></div>
+    </main>
 
-  <button id="openModal">Open Modal</button>
+    <div class="modal-overlay">
+      <form class="employee-form" method="post">
+        <h2>Add Employee Form</h2>
+        <div class="form-control">
+          <input type="text" name="name" placeholder="Enter employee name" required />
+        </div>
+        <div class="form-control">
+          <input type="email" name="email" placeholder="Enter email id" required />
+        </div>
+        <div class="form-control">
+          <input type="tel" name="phone" placeholder="Enter phone number" required />
+        </div>
+        <div class="form-control">
+          <input type="text" name="location" placeholder="Enter city, country" required />
+        </div>
+        <div class="form-control">
+          <input type="date" name="dob" placeholder="Enter date of birth" class="employee-dob" required />
+        </div>
+        <div class="form-control">
+          <input type="text" name="department" placeholder="Enter department" required />
+        </div>
+        <div class="form-control">
+          <input type="text" name="imageUrl" placeholder="Enter image URL (optional)" />
+        </div>
 
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Hello!</h2>
-      <p>This is a simple modal.</p>
+        <div class="submit-btn">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
-  <!-- <script src="./namasteJS/debounce-and-throttle-test.js"></script> -->
-  <!-- <script async src="./namasteJS/debounce-and-throttle.js"></script> -->
+
   <script src="./index.js"></script>
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    const modal = document.getElementById("myModal");
-    const btn = document.getElementById("openModal");
-    const span = document.querySelector(".close");
-
-    // Open modal
-    btn.onclick = () => {
-      modal.style.display = "flex";
-    }
-
-    // Close modal on "x"
-    span.onclick = () => {
-      modal.style.display = "none";
-    }
-
-    // Close modal on outside click
-    window.onclick = (event) => {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="employee.css">
 </body>
 
 </html>
