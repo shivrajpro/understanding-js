@@ -1,0 +1,43 @@
+<div id="app">
+    <header class="employee-header">
+        <h2>Employee Database Management</h2>
+        <div>
+            <button id="addEmployeeBtn" class="add-btn">Add Employee</button>
+        </div>
+    </header>
+    <main class="employees-container">
+        <div class="employee-list"></div>
+        <div class="employee-detail"></div>
+    </main>
+
+    <div class="modal-overlay">
+        <form class="employee-form" method="post">
+            <h2>Add Employee Form</h2>
+            <div class="form-control">
+                <input type="text" name="name" placeholder="Enter employee name" required />
+            </div>
+            <div class="form-control">
+                <input type="email" name="email" placeholder="Enter email id" required />
+            </div>
+            <div class="form-control">
+                <input type="tel" name="phone" placeholder="Enter phone number" required />
+            </div>
+            <div class="form-control">
+                <input type="text" name="location" placeholder="Enter city, country" required />
+            </div>
+            <div class="form-control">
+                <input type="date" name="dob" placeholder="Enter date of birth" class="employee-dob" required />
+            </div>
+            <div class="form-control">
+                <input type="text" name="department" placeholder="Enter department" required />
+            </div>
+            <div class="form-control">
+                <input type="text" name="imageUrl" placeholder="Enter image URL (optional)" />
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
