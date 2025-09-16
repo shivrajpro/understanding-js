@@ -65,17 +65,17 @@ input::-webkit-outer-spin-button {
 }
 
 .start {
-    color: black;
+    color: white;
     background-color: green;
 }
 
 .stop {
-    color: black;
-    background-color: red;
+    color: white;
+    display: none;
+    background-color: orange;
 }
 
 .reset {
-    display: none;
-    color: black;
-    background-color: yellow;
+    color: white;
+    background-color: red;
 }
