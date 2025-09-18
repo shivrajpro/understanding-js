@@ -37,3 +37,33 @@ function printNumbers1toN_2(i) {
 
 printNumbers1toN_2(5);
 
+//5. parameterised recursion
+function sum(i, acc) {
+    if (i < 1) {
+        console.log(acc);
+        return;
+    }
+    sum(i - 1, acc + i);
+}
+
+// sum(5, 0);
+// sum(3, 0);
+
+//6. functional recursion
+function sum2(n) {
+    if (n === 0) return 0;
+    return n + sum2(n - 1);
+}
+
+console.log(sum2(3));
+console.log(sum2(5));
+
+//7. factorial
+function fact(n) {
+    if (n === 0) return 1;
+    return n * fact(n - 1);
+}
+console.log(fact(3));
+console.log(fact(5));
+
+
