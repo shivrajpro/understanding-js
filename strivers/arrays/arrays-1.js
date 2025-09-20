@@ -34,7 +34,7 @@ function isSorted(arr) {
 // console.log(isSorted([1, 2, 3, 4, 5]));
 // console.log(isSorted([1, 2, 3, 4, 5, 1]));
 
-//3. remove duplicates from sorted array (in place)
+//3. remove duplicates from SORTED array (in place)
 
 function removeDuplicates1(arr) {
     const set = new Set();
